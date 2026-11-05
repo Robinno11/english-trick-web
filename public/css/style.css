@@ -1,0 +1,191 @@
+/* English Trick Custom Brand Styling */
+:root {
+    --et-cyan: #00A3C4;
+    --et-cyan-dark: #0087a3;
+    --et-cyan-light: #e0f7fa;
+    --et-pink: #FF007F;
+    --et-pink-hover: #e00070;
+    --et-pink-light: #fce7f3;
+    --et-dark: #0F172A;
+    --et-navy: #1E293B;
+}
+
+/* Smooth Scrolling & Sticky Navbar Offset */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+}
+
+/* ===================================================
+   Scroll Reveal Pop-Up Animation (Fade-In & Slide-Up)
+   =================================================== */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(36px) scale(0.98);
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-section.is-revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Staggered Pop-Up for child elements / cards */
+.reveal-child {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-section.is-revealed .reveal-child {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Stagger delays for grid items when revealed */
+.reveal-section.is-revealed .reveal-delay-1 { transition-delay: 0.08s !important; }
+.reveal-section.is-revealed .reveal-delay-2 { transition-delay: 0.16s !important; }
+.reveal-section.is-revealed .reveal-delay-3 { transition-delay: 0.24s !important; }
+.reveal-section.is-revealed .reveal-delay-4 { transition-delay: 0.32s !important; }
+.reveal-section.is-revealed .reveal-delay-5 { transition-delay: 0.40s !important; }
+.reveal-section.is-revealed .reveal-delay-6 { transition-delay: 0.48s !important; }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+    .reveal-section,
+    .reveal-child {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseSubtle {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+@keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-float {
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+    animation: pulseSubtle 2.5s ease-in-out infinite;
+}
+
+.gradient-cyan-pink {
+    background: linear-gradient(135deg, #00A3C4 0%, #0087a3 50%, #FF007F 100%);
+}
+
+.gradient-hero {
+    background: radial-gradient(circle at 15% 15%, rgba(0, 163, 196, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(255, 0, 127, 0.08) 0%, transparent 40%),
+                linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+}
+
+.card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px -10px rgba(0, 163, 196, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+}
+
+.glass-nav {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom sound wave animation for speech button */
+.sound-wave {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    height: 18px;
+}
+.sound-wave span {
+    width: 3px;
+    height: 100%;
+    background-color: currentColor;
+    border-radius: 9999px;
+    animation: soundWaveAnim 1.2s ease-in-out infinite;
+}
+.sound-wave span:nth-child(1) { animation-delay: 0.1s; height: 30%; }
+.sound-wave span:nth-child(2) { animation-delay: 0.3s; height: 80%; }
+.sound-wave span:nth-child(3) { animation-delay: 0.2s; height: 50%; }
+.sound-wave span:nth-child(4) { animation-delay: 0.4s; height: 100%; }
+
+@keyframes soundWaveAnim {
+    0%, 100% { transform: scaleY(0.3); }
+    50% { transform: scaleY(1); }
+}
+
+/* ===================================================
+   Active Navigation Menu Underline Indicator
+   =================================================== */
+.nav-menu-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.nav-menu-link .nav-indicator-line {
+    position: absolute;
+    bottom: -4px;
+    left: 8px;
+    right: 8px;
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #00A3C4 0%, #FF007F 100%);
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    transform-origin: center;
+    pointer-events: none;
+}
+
+.nav-menu-link:hover .nav-indicator-line {
+    opacity: 0.4;
+    transform: scaleX(0.7);
+}
+
+.nav-menu-link.active {
+    color: #00A3C4 !important;
+    font-weight: 800 !important;
+}
+
+.nav-menu-link.active .nav-indicator-line {
+    opacity: 1 !important;
+    transform: scaleX(1) !important;
+}
+
+/* Mobile Active Menu Link */
+.mobile-nav-link.active {
+    color: #00A3C4 !important;
+    font-weight: 800 !important;
+    background-color: #ecfeff !important; /* cyan-50 */
+    border-left: 4px solid #00A3C4 !important;
+    padding-left: 0.85rem !important;
+}
