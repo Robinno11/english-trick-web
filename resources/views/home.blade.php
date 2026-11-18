@@ -888,15 +888,15 @@
                     📍
                 </div>
                 <div>
-                    <h4 class="text-xl font-black text-white">Ada Pertanyaan Tentang Lokasi?</h4>
+                    <h4 class="text-xl font-black text-white">Segera Hubungi Cabang Terdekat Kami Untuk Berkesempatan Mengikuti Trial Class</h4>
                     <p class="text-slate-300 text-xs sm:text-sm mt-0.5">
                         Kamu bisa hubungi cabang terdekat kami melalui WhatsApp atau klik tombol "Lihat Lokasi" untuk petunjuk arah di Google Maps.
                     </p>
                 </div>
             </div>
-            <a href="https://wa.me/6285385120633" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-et-cyan to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-extrabold text-sm shadow-md transition-all whitespace-nowrap shrink-0">
+            <!-- <a href="https://wa.me/6285385120633" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-et-cyan to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-extrabold text-sm shadow-md transition-all whitespace-nowrap shrink-0">
                 Hubungi Kami via WhatsApp &rarr;
-            </a>
+            </a> -->
         </div>
 
     </div>
