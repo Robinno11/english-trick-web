@@ -404,10 +404,10 @@
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span class="text-xs font-black uppercase tracking-widest text-et-cyan bg-cyan-100 px-3 py-1 rounded-full">Program Pilihan</span>
             <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                Pilih Program Sesuai Usia & Kebutuhan Kamu
+                Program Lengkap
             </h2>
             <p class="text-slate-600 text-base sm:text-lg">
-                Mulai dari anak usia dini hingga profesional, setiap program dirancang dengan kurikulum bertahap dan materi interaktif.
+                Dimulai dari anak usia 3 tahun - 18 tahun, remaja, mahasiswa hingga dewasa
             </p>
         </div>
 
