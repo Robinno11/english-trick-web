@@ -51,7 +51,7 @@
                     </div>
                     <div class="h-6 w-px bg-slate-300 hidden sm:block"></div>
                     <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 rounded-full border-2 border-blue-400 text-blue-600 flex items-center justify-center text-xs font-black">★</div>
+                        <img src="{{ asset('images/logo-cefr.jpg') }}" alt="CEFR Logo" class="h-8 w-auto object-contain">
                         <div class="text-left">
                             <span class="text-xs font-black tracking-tight text-slate-900 block leading-tight">CEFR</span>
                             <span class="text-[8px] text-slate-500 font-bold uppercase tracking-wider block">Common European Framework</span>
