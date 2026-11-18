@@ -554,9 +554,9 @@
                 <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl font-black">
                     🏆
                 </div>
-                <h3 class="text-lg font-black text-slate-900">Pendampingan Olimpiade/Lomba</h3>
+                <h3 class="text-lg font-black text-slate-900">Coaching Clinic</h3>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    Dukungan dan pendampingan untuk mengikuti olimpiade atau lomba.
+                    Pendampingan Lomba dan Olimpiade
                 </p>
             </div>
 
