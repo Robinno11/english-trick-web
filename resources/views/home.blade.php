@@ -496,10 +496,10 @@
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span class="text-xs font-black uppercase tracking-widest text-et-pink bg-pink-100 px-3 py-1 rounded-full">Keunggulan</span>
             <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                Keunggulan English Trick
+                Kurikulum Internasional Pearson
             </h2>
             <p class="text-slate-600 text-base sm:text-lg">
-                Program dan dukungan untuk membantu siswa berkembang.
+                Standar penilaian GSE & CEFR
             </p>
         </div>
 
