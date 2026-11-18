@@ -140,7 +140,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'In-House Training',
-                'slug' => 'In-house-training',
+                'slug' => 'Corporate',
                 'category' => 'corporate',
                 'tagline' => 'Empowering People, Enhancing Communication',
                 'age_group' => 'Perusahaan, Karyawan & Profesional',
@@ -153,7 +153,7 @@ class DatabaseSeeder extends Seeder
                     'Final Assessment & Training Report',
                 ],
                 'price_starting' => 'Menyesuaikan Kebutuhan',
-                'badge' => 'In-House Training',
+                'badge' => 'Corporate',
                 'icon' => 'house',
                 'is_popular' => true,
                 'order' => 5,
