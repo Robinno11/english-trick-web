@@ -673,7 +673,7 @@
             @endforeach
         </div>
 
-        <!-- Bottom Banner: Ace the Test, Elevate Your English with Smart Tricks! -->
+        <!-- Bottom Banner: Ace the Test, Elevate Your English with Smart Tricks! 
         <div class="mt-14 bg-gradient-to-r from-cyan-600 via-et-cyan to-pink-500 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div class="space-y-1">
                 <span class="text-xs font-black uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full inline-block">English Trick Sidoarjo</span>
@@ -692,13 +692,13 @@
                     <span>Chat WhatsApp</span>
                 </a>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </section>
 
 
-<!-- 8. SECTION FORM PENDAFTARAN & KONSULTASI ONLINE -->
+<!-- 8. SECTION FORM PENDAFTARAN & KONSULTASI ONLINE 
 <section id="daftar" class="reveal-section py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -792,9 +792,9 @@
                             <textarea name="message" id="reg_message" rows="3" placeholder="Tuliskan jika ada kebutuhan khusus atau target belajar kamu..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm"></textarea>
                         </div>
 
-                        <!-- <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-et-cyan to-et-pink hover:opacity-95 text-white font-extrabold text-base shadow-xl shadow-cyan-500/20 active:scale-95 transition-all">
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-et-cyan to-et-pink hover:opacity-95 text-white font-extrabold text-base shadow-xl shadow-cyan-500/20 active:scale-95 transition-all">
                             Kirim & Hubungkan ke WhatsApp Admin &rarr;
-                        </button> -->
+                        </button> 
 
                     </form>
                 </div>
@@ -803,7 +803,7 @@
         </div>
 
     </div>
-</section>
+</section> -->
 
 
 <!-- 9. SECTION LOKASI CABANG ENGLISH TRICK & GOOGLE MAPS (PDF Page 7) -->
@@ -990,7 +990,7 @@
             </div>
         </div>
 
-        <!-- Banner Kirim CV Terbuka -->
+        <!-- Banner Kirim CV Terbuka 
         <div class="rounded-3xl bg-slate-900 text-white p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl reveal-child">
             <div class="space-y-2 text-center md:text-left">
                 <span class="text-xs font-black uppercase tracking-wider text-cyan-400 bg-cyan-950/80 px-3 py-1 rounded-full border border-cyan-800">Open Talent Pool</span>
@@ -1000,7 +1000,7 @@
             <a href="https://api.whatsapp.com/send?phone=6285385120633&text={{ urlencode('Halo HRD & Admin English Trick Karangbong! Saya ingin mengirimkan CV terbuka (Open Application) untuk bergabung di English Trick. Mohon info alamat email atau kontak pengiriman berkas.') }}" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-2xl bg-white text-slate-900 hover:bg-yellow-300 font-black text-sm shadow-lg hover:scale-105 transition-all whitespace-nowrap">
                 Kirim CV Terbuka via WhatsApp &rarr;
             </a>
-        </div>
+        </div> -->
 
     </div>
 </section>
