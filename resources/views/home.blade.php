@@ -12,11 +12,11 @@
             <!-- Left Hero Text -->
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-child reveal-delay-1">
                 
-                <!-- Badge Pill -->
+                <!-- Badge Pill 
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100/80 border border-cyan-300 text-et-cyan-dark text-xs sm:text-sm font-extrabold shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-et-pink animate-ping"></span>
                     <span>Lembaga Kursus Bahasa Inggris #1 di Damarsi Sidoarjo</span>
-                </div>
+                </div> -->
 
                 <!-- Main Slogan & Headline -->
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
@@ -136,12 +136,12 @@
                             <img src="{{ asset('images/logo.png') }}" alt="Logo English Trick" class="w-12 h-12 rounded-xl object-contain shadow-sm border border-slate-100 p-1">
                             <div>
                                 <h3 class="font-extrabold text-slate-900 text-sm">English Trick Assessment</h3>
-                                <p class="text-xs text-slate-500">Placement Test Demo</p>
+                                <p class="text-xs text-slate-500">Placement Test</p>
                             </div>
                         </div>
-                        <span class="px-2.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-700">
+                        <!-- <span class="px-2.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-700">
                             Live Result
-                        </span>
+                        </span> -->
                     </div>
 
                     <!-- Level Badge Display -->
@@ -456,8 +456,8 @@
                 <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
                     <div>
                         @if($prog->price_starting === 'Menyesuaikan Kebutuhan')
-                        <span class="text-lg font-black text-et-pink">Menyesuaikan Kebutuhan</span>
-                        <span class="text-[11px] text-slate-500 block font-semibold">Hubungi Kami</span>
+                        <span class="text-lg font-black text-et-pink">Hubungi kami</span>
+                        
                         @elseif($prog->price_starting === 'On Going')
                         <span class="text-lg font-black text-et-pink">On Going</span>
                         <span class="text-[11px] text-slate-500 block font-semibold">Akan Segera Dibuka</span>
@@ -792,9 +792,9 @@
                             <textarea name="message" id="reg_message" rows="3" placeholder="Tuliskan jika ada kebutuhan khusus atau target belajar kamu..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-et-cyan to-et-pink hover:opacity-95 text-white font-extrabold text-base shadow-xl shadow-cyan-500/20 active:scale-95 transition-all">
+                        <!-- <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-et-cyan to-et-pink hover:opacity-95 text-white font-extrabold text-base shadow-xl shadow-cyan-500/20 active:scale-95 transition-all">
                             Kirim & Hubungkan ke WhatsApp Admin &rarr;
-                        </button>
+                        </button> -->
 
                     </form>
                 </div>

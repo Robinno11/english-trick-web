@@ -96,7 +96,7 @@ class DatabaseSeeder extends Seeder
                 'badge' => 'Akan Segera Dibuka',
                 'icon' => 'document-check',
                 'is_popular' => false,
-                'order' => 4,
+                'order' => 6,
             ],
             [
                 'name' => 'VIP Private Class 1-on-1',
@@ -115,8 +115,8 @@ class DatabaseSeeder extends Seeder
                 'price_starting' => 'Rp 800.000',
                 'badge' => 'VIP Prioritas',
                 'icon' => 'user-group',
-                'is_popular' => false,
-                'order' => 5,
+                'is_popular' => true,
+                'order' => 4,
             ],
             [
                 'name' => 'English Trick Intensive Camp',
@@ -136,11 +136,11 @@ class DatabaseSeeder extends Seeder
                 'badge' => 'Akan Segera Dibuka',
                 'icon' => 'sun',
                 'is_popular' => false,
-                'order' => 6,
+                'order' => 7,
             ],
             [
-                'name' => 'In House Training',
-                'slug' => 'in-house-training',
+                'name' => 'In-House Training',
+                'slug' => 'In-house-training',
                 'category' => 'corporate',
                 'tagline' => 'Empowering People, Enhancing Communication',
                 'age_group' => 'Perusahaan, Karyawan & Profesional',
@@ -153,10 +153,10 @@ class DatabaseSeeder extends Seeder
                     'Final Assessment & Training Report',
                 ],
                 'price_starting' => 'Menyesuaikan Kebutuhan',
-                'badge' => 'In House Training',
+                'badge' => 'In-House Training',
                 'icon' => 'house',
                 'is_popular' => true,
-                'order' => 7,
+                'order' => 5,
             ],
         ];
 
