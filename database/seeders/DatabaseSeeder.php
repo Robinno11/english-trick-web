@@ -138,6 +138,26 @@ class DatabaseSeeder extends Seeder
                 'is_popular' => false,
                 'order' => 6,
             ],
+            [
+                'name' => 'In House Training',
+                'slug' => 'in-house-training',
+                'category' => 'corporate',
+                'tagline' => 'Empowering People, Enhancing Communication',
+                'age_group' => 'Perusahaan, Karyawan & Profesional',
+                'description' => 'Program pelatihan Bahasa Inggris profesional yang dirancang khusus untuk meningkatkan kemampuan komunikasi karyawan, membangung kepercayaan diri, serta mendukung kebutuhan komunikasi di lingkungan kerja dan dunia bisnis',
+                'features' => [
+                    'TOEFL Preparation',
+                    'Customized Training Sesuai Kebutuhan',
+                    'Initial Assesstment & Learning Progress Report',
+                    'Interactive Learning, Role Play & Case Studies',
+                    'Final Assessment & Training Report',
+                ],
+                'price_starting' => 'Menyesuaikan Kebutuhan',
+                'badge' => 'In House Training',
+                'icon' => 'house',
+                'is_popular' => true,
+                'order' => 7,
+            ],
         ];
 
         foreach ($programs as $prog) {

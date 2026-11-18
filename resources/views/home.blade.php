@@ -455,7 +455,10 @@
 
                 <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
                     <div>
-                        @if($prog->price_starting === 'On Going')
+                        @if($prog->price_starting === 'Menyesuaikan Kebutuhan')
+                        <span class="text-lg font-black text-et-pink">Menyesuaikan Kebutuhan</span>
+                        <span class="text-[11px] text-slate-500 block font-semibold">Hubungi Kami</span>
+                        @elseif($prog->price_starting === 'On Going')
                         <span class="text-lg font-black text-et-pink">On Going</span>
                         <span class="text-[11px] text-slate-500 block font-semibold">Akan Segera Dibuka</span>
                         @else
