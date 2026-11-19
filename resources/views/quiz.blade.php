@@ -92,33 +92,38 @@
             <!-- STEP 2: FORM IDENTITAS PESERTA -->
             <div id="stepIdentity" class="hidden space-y-6 max-w-lg mx-auto">
                 <button type="button" onclick="backToStepCategory()" class="text-xs font-bold text-slate-500 hover:text-et-cyan flex items-center gap-1 mb-2">
-                    &larr; Ganti Kategori Usia
+                    &larr; Ganti Kategori
                 </button>
 
                 <div class="text-center space-y-2">
                     <span class="text-4xl" id="identityEmoji">🐣</span>
-                    <h2 class="text-2xl font-black text-slate-900">Placement Test Identitas</h2>
-                    <p class="text-xs text-slate-500">Lengkapi data berikut sebelum memulai tes kemampuan bahasa Inggris.</p>
+                    <h2 class="text-2xl font-black text-slate-900">Identitas</h2>
+                    <p class="text-xs text-slate-500">Lengkapi data berikut sebelum memulai tes kemampuan bahasa inggris.</p>
                 </div>
 
                 <form id="identityForm" onsubmit="startQuiz(event)" class="space-y-4">
                     <div>
-                        <label for="quiz_name" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Nama *</label>
-                        <input type="text" id="quiz_name" required placeholder="Contoh: Sarah / Kenzo" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                        <label for="quiz_name" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Nama</label>
+                        <input type="text" id="quiz_name" required placeholder="Masukan nama panjang" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
                     </div>
 
                     <div>
-                        <label for="quiz_whatsapp" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">No Wa *</label>
-                        <input type="tel" id="quiz_whatsapp" required placeholder="Contoh: 081234567890" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                        <label for="quiz_whatsapp" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Umur</label>
+                        <input type="tel" id="quiz_whatsapp" required placeholder="Masukan umur" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                    </div>
+
+                    <div>
+                        <label for="quiz_whatsapp" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">No Whatsapp</label>
+                        <input type="tel" id="quiz_whatsapp" required placeholder="081234567890" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
                         <span class="text-[11px] text-slate-400 mt-1 block">Untuk mengirimkan hasil asesmen & rekomendasi kelas.</span>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1.5">Bimbel? *</label>
+                        <label class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1.5">Apakah anda pernah mengikuti bimbel</label>
                         <div class="grid grid-cols-2 gap-3">
                             <label class="flex items-center gap-2 p-3 rounded-2xl border-2 border-slate-200 cursor-pointer hover:border-et-cyan transition-all has-[:checked]:border-et-cyan has-[:checked]:bg-cyan-50/50">
                                 <input type="radio" name="quiz_has_bimbel" value="Sudah" onchange="handleBimbelChange(this.value)" class="text-et-cyan focus:ring-et-cyan">
-                                <span class="text-sm font-bold text-slate-700">Sudah / Pernah</span>
+                                <span class="text-sm font-bold text-slate-700">Pernah</span>
                             </label>
                             <label class="flex items-center gap-2 p-3 rounded-2xl border-2 border-slate-200 cursor-pointer hover:border-et-cyan transition-all has-[:checked]:border-et-cyan has-[:checked]:bg-cyan-50/50">
                                 <input type="radio" name="quiz_has_bimbel" value="Belum" checked onchange="handleBimbelChange(this.value)" class="text-et-cyan focus:ring-et-cyan">
@@ -128,18 +133,37 @@
                     </div>
 
                     <div id="containerBimbelDuration" class="hidden space-y-1">
-                        <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">If sudah berapa lama? *</label>
+                        <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Apa Bimbel Yang Pernah Anda Ikuti</label>
                         <select id="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
-                            <option value="" disabled selected>-- Pilih Durasi Bimbel Sebelumnya --</option>
+                            <option value="" disabled selected>-- Pilih Bimbel --</option>
+                            <option value="English for Kids">English for Kids</option>
+                            <option value="English for Teens (Junior High & High School)">English for Teens (Junior High & High School)</option>
+                            <option value="Speaking Booster & General English">Speaking Booster & General English</option>
+                            <option value="VIP Private Class 1-on-1">VIP Private Class 1-on-1</option>
+                            <option value="TOEFL & IELTS Fast-Track Trick">TOEFL & IELTS Fast-Track Trick</option>
+                            <option value="English Trick Intensive Camp">English Trick Intensive Camp</option>
+                        </select>
+
+                        <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Berapa Lama Anda Kursus</label>
+                        <select id="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
+                            <option value="" disabled selected>-- Pilih Durasi --</option>
                             <option value="Kurang dari 6 bulan">&lt; 6 Bulan</option>
                             <option value="6 - 12 bulan">6 - 12 Bulan</option>
                             <option value="1 - 2 tahun">1 - 2 Tahun</option>
                             <option value="Lebih dari 2 tahun">&gt; 2 Tahun</option>
                         </select>
+
+                        <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Dicabang Mana Anda Pernah Mengikuti Bimbel</label>
+                        <select id="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
+                            <option value="" disabled selected>-- Pilih Cabang --</option>
+                            <option value="Karangbong">Karangbong</option>
+                            <option value="Damarsi">Damarsi</option>
+                            <option value="Taman Pondok Jati">Taman Pondok Jati</option>
+                        </select>
                     </div>
 
                     <div>
-                        <label for="quiz_branch" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Pilih cabang terdekat *</label>
+                        <label for="quiz_branch" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Rencana Kursus Di Cabang Mana</label>
                         <select id="quiz_branch" required class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
                             <option value="" disabled selected>-- Pilih Cabang Terdekat --</option>
                             <option value="Damarsi (Buduran)">📍 Damarsi (Buduran, Sidoarjo)</option>
