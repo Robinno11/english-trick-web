@@ -15,7 +15,7 @@
                 Cari Tahu Level Bahasa Inggrismu dalam <span class="text-transparent bg-clip-text bg-gradient-to-r from-et-cyan to-et-pink">3 Menit!</span>
             </h1>
             <p class="text-slate-600 text-sm sm:text-base">
-                Asesmen interaktif dengan audio native, kartu pilihan seru, dan trik kilat. Ketahui estimasi CEFR kamu sekarang!
+                Asesmen interaktif dengan audio native. Ketahui estimasi CEFR kamu sekarang!
             </p>
         </div>
 
@@ -26,12 +26,12 @@
             <div id="stepCategory" class="space-y-8">
                 <div class="text-center space-y-2">
                     <span class="text-5xl">🎂</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Berapa Usia Peserta?</h2>
-                    <p class="text-slate-500 text-sm">Pilih kategori usia agar soal disesuaikan dengan tingkat pemahaman.</p>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Sesuaikan Level Test</h2>
+                    <p class="text-slate-500 text-sm">Pilih kategori test yang sesuai diri anda.</p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mx-auto">
-                    <!-- Kids -->
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-5 max-w-2xl mx-auto">
+                    <!-- Kids 
                     <button type="button" onclick="selectCategory('kids')" class="group p-6 rounded-3xl border-2 border-b-[6px] border-cyan-200 hover:border-et-cyan bg-white hover:bg-cyan-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
                         <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🐣</span>
                         <div>
@@ -39,16 +39,16 @@
                             <span class="text-xs font-bold text-slate-500">Usia 4 - 8 Tahun</span>
                         </div>
                         <span class="mt-2 text-[11px] font-black text-cyan-600 uppercase">Phonics & Fun Play &rarr;</span>
-                    </button>
+                    </button> -->
 
                     <!-- Teens -->
                     <button type="button" onclick="selectCategory('teens')" class="group p-6 rounded-3xl border-2 border-b-[6px] border-pink-200 hover:border-et-pink bg-white hover:bg-pink-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
                         <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🧒</span>
                         <div>
-                            <span class="block font-black text-xl text-slate-900 group-hover:text-et-pink">Junior & Teens</span>
+                            <span class="block font-black text-xl text-slate-900 group-hover:text-et-pink">Young Learners</span>
                             <span class="text-xs font-bold text-slate-500">Usia 9 - 15 Tahun</span>
                         </div>
-                        <span class="mt-2 text-[11px] font-black text-pink-600 uppercase">Confidence & Exam &rarr;</span>
+                        <!-- <span class="mt-2 text-[11px] font-black text-pink-600 uppercase">Confidence & Exam &rarr;</span> -->
                     </button>
 
                     <!-- Adults -->
@@ -58,12 +58,34 @@
                             <span class="block font-black text-xl text-slate-900 group-hover:text-indigo-600">Adults</span>
                             <span class="text-xs font-bold text-slate-500">16+ & Mahasiswa/Umum</span>
                         </div>
-                        <span class="mt-2 text-[11px] font-black text-indigo-600 uppercase">Fluency & Career &rarr;</span>
+                        <!-- <span class="mt-2 text-[11px] font-black text-indigo-600 uppercase">Fluency & Career &rarr;</span> -->
+                    </button>
+                
+
+                    <!-- Benchmark Test -->
+                    <button type="button" class="group p-6 rounded-3xl border-2 border-b-[6px] border-indigo-200 hover:border-indigo-500 bg-white hover:bg-indigo-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
+                        <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🧑</span>
+                        <div>
+                            <span class="block font-black text-xl text-slate-900 group-hover:text-indigo-600">Benchmark Test</span>
+                            <span class="text-xs font-bold text-slate-500">Belum Tersedia</span>
+                        </div>
+                        <!-- <span class="mt-2 text-[11px] font-black text-indigo-600 uppercase">Fluency & Career &rarr;</span> -->
+                    </button>
+                
+
+                    <!-- Versant Test -->
+                    <button type="button" class="group p-6 rounded-3xl border-2 border-b-[6px] border-indigo-200 hover:border-indigo-500 bg-white hover:bg-indigo-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
+                        <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🧑</span>
+                        <div>
+                            <span class="block font-black text-xl text-slate-900 group-hover:text-indigo-600">Versant Test</span>
+                            <span class="text-xs font-bold text-slate-500">Belum Tersedia</span>
+                        </div>
+                        <!-- <span class="mt-2 text-[11px] font-black text-indigo-600 uppercase">Fluency & Career &rarr;</span> -->
                     </button>
                 </div>
 
                 <div class="text-center pt-2">
-                    <span class="text-xs text-slate-400">✨ 100% Bebas Biaya • Hasil Langsung Keluar Otomatis</span>
+                    <span class="text-xs text-slate-400">✨ Pastikan kemampuan anda</span>
                 </div>
             </div>
 
