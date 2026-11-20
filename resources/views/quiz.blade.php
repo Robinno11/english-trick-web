@@ -593,23 +593,66 @@
         const container = document.getElementById('optionsContainer');
         container.innerHTML = '';
 
+        let optionImages = [];
+        if (Array.isArray(q.option_images)) {
+            optionImages = q.option_images;
+        } else if (typeof q.option_images === 'string' && q.option_images.trim() !== '') {
+            try {
+                const parsed = JSON.parse(q.option_images);
+                if (Array.isArray(parsed)) optionImages = parsed;
+            } catch (e) {
+                optionImages = [];
+            }
+        }
+
+        const hasImageOptions = optionImages.some((img) => typeof img === 'string' && img.trim() !== '');
+
+        container.className = hasImageOptions
+            ? 'grid grid-cols-1 sm:grid-cols-2 gap-3'
+            : 'grid grid-cols-1 gap-3';
+
         const previouslySelected = quizState.answers[q.id];
 
         q.options.forEach((opt, idx) => {
             const isSelected = (previouslySelected !== undefined && previouslySelected === idx);
             const btn = document.createElement('button');
             btn.type = 'button';
-            btn.className = `option-btn p-4 rounded-2xl border-2 text-left font-bold text-sm transition-all flex items-center gap-3 ${
-                isSelected 
-                    ? 'border-et-cyan bg-cyan-50 text-et-cyan shadow-sm' 
+            const letter = String.fromCharCode(65 + idx); // A, B, C, D
+            const rawImg = typeof optionImages[idx] === 'string' ? optionImages[idx].trim() : '';
+            const isImageOption = rawImg !== '';
+
+            btn.className = `option-btn p-4 rounded-2xl border-2 text-left font-bold text-sm transition-all flex ${
+                isImageOption ? 'flex-col items-start gap-3' : 'items-center gap-3'
+            } ${
+                isSelected
+                    ? 'border-et-cyan bg-cyan-50 text-et-cyan shadow-sm'
                     : 'border-slate-200 bg-white hover:border-slate-300 text-slate-700'
             }`;
-            
-            const letter = String.fromCharCode(65 + idx); // A, B, C, D
-            btn.innerHTML = `
-                <span class="w-8 h-8 rounded-xl ${isSelected ? 'bg-et-cyan text-white' : 'bg-slate-100 text-slate-600'} flex items-center justify-center font-black text-xs shrink-0">${letter}</span>
-                <span class="leading-snug">${stripEmoji(opt)}</span>
-            `;
+
+            const badge = document.createElement('span');
+            badge.className = `w-8 h-8 rounded-xl ${
+                isSelected ? 'bg-et-cyan text-white' : 'bg-slate-100 text-slate-600'
+            } flex items-center justify-center font-black text-xs shrink-0`;
+            badge.textContent = letter;
+
+            if (isImageOption) {
+                // Hanya badge huruf (A, B, C) + gambar tanpa teks deskripsi
+                btn.appendChild(badge);
+
+                const img = document.createElement('img');
+                img.src = rawImg;
+                img.alt = `Pilihan ${letter}`;
+                img.loading = 'lazy';
+                img.className = 'w-full max-h-48 object-contain rounded-xl bg-slate-50';
+                img.onerror = () => img.remove();
+                btn.appendChild(img);
+            } else {
+                // Mode opsi teks biasa (seperti semula)
+                btn.innerHTML = `
+                    <span class="w-8 h-8 rounded-xl ${isSelected ? 'bg-et-cyan text-white' : 'bg-slate-100 text-slate-600'} flex items-center justify-center font-black text-xs shrink-0">${letter}</span>
+                    <span class="leading-snug">${stripEmoji(opt)}</span>
+                `;
+            }
 
             btn.onclick = () => selectOption(q.id, idx);
             container.appendChild(btn);

@@ -34,6 +34,7 @@ class QuizQuestion extends Model
     {
         return [
             'options' => 'array',
+            'option_images' => 'array',
             'correct_index' => 'integer',
             'order' => 'integer',
         ];
