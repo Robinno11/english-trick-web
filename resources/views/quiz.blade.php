@@ -211,7 +211,12 @@
             </div>
         </div>
 
-        <!-- Mode B: Soal Bacaan / Pertanyaan Biasa (tampil jika question_type === 'reading') -->
+        <!-- Mode B: Story Text di atas (question_type === 'story') -->
+    <div id="storyWrapper" class="hidden text-left">
+        <p id="storyText" class="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed whitespace-pre-line"></p>
+    </div>
+
+        <!-- Mode C: Soal Bacaan / Pertanyaan Biasa (tampil jika question_type === 'reading') -->
         <div id="readingWrapper" class="hidden text-left space-y-3">
             <div id="readingPassage" class="hidden p-4 rounded-2xl bg-white border border-slate-200 text-sm text-slate-700 leading-relaxed"></div>
             <h2 id="topQuestionText" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
@@ -503,30 +508,41 @@
                 alert('Pertanyaan belum tersedia untuk kategori ini.');
             }
         } catch (err) {
-            alert('Gagal memuat pertanyaan. Silakan coba lagi.');
+            console.error('Detail error saat memuat/merender soal:', err);
+            alert('Gagal memuat pertanyaan: ' + (err.message || err));
         }
     }
 
     // Step 3: Render Question (YouTube vs Reading/Pertanyaan Biasa, tanpa emoji)
     function renderCurrentQuestion() {
         const q = quizState.questions[quizState.currentIndex];
-        const total = quizState.questions.length;
-        const currentNum = quizState.currentIndex + 1;
+    if (!q) return;
 
-        document.getElementById('questionCounter').textContent = `Pertanyaan ${currentNum} dari ${total}`;
-        document.getElementById('progressBar').style.width = `${(currentNum / total) * 100}%`;
-        
-        const catLabels = { 'kids': 'Kids Test (4-8 Thn)', 'teens': 'Teens Test (9-15 Thn)', 'adults': 'Adults Test (16+ Thn)' };
-        document.getElementById('categoryPill').textContent = catLabels[quizState.category] || 'Level Test';
+    const total = quizState.questions.length;
+    const currentNum = quizState.currentIndex + 1;
 
+    document.getElementById('questionCounter').textContent = `Pertanyaan ${currentNum} dari ${total}`;
+    document.getElementById('progressBar').style.width = `${(currentNum / total) * 100}%`;
+
+    const catLabels = {
+        'kids': 'Kids Test (4-8 Thn)',
+        'teens': 'Teens Test (9-15 Thn)',
+        'adults': 'Adults Test (16+ Thn)'
+    };
+    document.getElementById('categoryPill').textContent = catLabels[quizState.category] || 'Level Test';
         const cleanQuestion = stripEmoji(q.question || '');
         const cleanSubText = stripEmoji(q.sub_text || 'Pilih jawaban yang paling tepat:');
         const cleanReading = stripEmoji(q.reading_text || '');
+        const cleanStory = stripEmoji(q.story_text || '');
         const normalizedType = String(q.question_type || '').trim().toLowerCase();
-        const isYouTube = normalizedType === 'youtube' || Boolean(q.youtube_url || q.youtube_id);
+
+        const isYouTube = normalizedType === 'youtube' || (!normalizedType && Boolean(q.youtube_url || q.youtube_id));
+        const isStory = normalizedType === 'story';
 
         const youtubeWrapper = document.getElementById('youtubeWrapper');
         const youtubeFrame = document.getElementById('youtubeFrame');
+        const storyWrapper = document.getElementById('storyWrapper');
+        const storyText = document.getElementById('storyText');
         const readingWrapper = document.getElementById('readingWrapper');
         const readingPassage = document.getElementById('readingPassage');
         const topQuestionText = document.getElementById('topQuestionText');
@@ -535,9 +551,11 @@
         const bottomQuestionText = document.getElementById('bottomQuestionText');
         const bottomSubText = document.getElementById('bottomSubText');
 
-        // Reset media & posisi soal
+        // Reset semua mode sebelum merender soal aktif
         if (youtubeFrame) youtubeFrame.src = '';
         if (youtubeWrapper) youtubeWrapper.classList.add('hidden');
+        if (storyWrapper) storyWrapper.classList.add('hidden');
+        if (storyText) storyText.textContent = '';
         if (readingWrapper) readingWrapper.classList.add('hidden');
         if (readingPassage) {
             readingPassage.classList.add('hidden');
@@ -551,6 +569,13 @@
                 youtubeFrame.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
                 youtubeWrapper.classList.remove('hidden');
             }
+            if (bottomQuestionText) bottomQuestionText.textContent = cleanQuestion;
+            if (bottomSubText) bottomSubText.textContent = cleanSubText;
+            if (aboveOptionsQuestion) aboveOptionsQuestion.classList.remove('hidden');
+        } else if (isStory) {
+            if (storyText) storyText.textContent = cleanStory;
+            if (storyWrapper) storyWrapper.classList.remove('hidden');
+
             if (bottomQuestionText) bottomQuestionText.textContent = cleanQuestion;
             if (bottomSubText) bottomSubText.textContent = cleanSubText;
             if (aboveOptionsQuestion) aboveOptionsQuestion.classList.remove('hidden');
@@ -617,7 +642,6 @@
 
     // Audio Speech Synthesis (tetap dipertahankan jika masih dipakai soal non-YouTube)
     function playAudioSpeech() {
-        const q = quizState.questions[quizState.currentIndex];
         const speechText = q.speech_text || q.question;
 
         if ('speechSynthesis' in window) {
