@@ -173,65 +173,77 @@
                     </div>
 
                     <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-et-cyan to-teal-500 text-white font-black text-base shadow-lg shadow-cyan-500/25 hover:opacity-95 transition-all mt-2">
-                        Mulai Mengerjakan Soal (6 Soal) &rarr;
+                        Mulai Mengerjakan Soal
                     </button>
                 </form>
             </div>
 
+            
             <!-- STEP 3: QUESTIONS SCREEN -->
-            <div id="stepQuestions" class="hidden space-y-6">
-                
-                <!-- Progress bar & counter -->
-                <div>
-                    <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
-                        <span id="questionCounter">Pertanyaan 1 dari 6</span>
-                        <span id="categoryPill" class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-cyan-100 text-et-cyan">Kids Test</span>
-                    </div>
-                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
-                        <div id="progressBar" class="h-full bg-gradient-to-r from-et-cyan to-et-pink rounded-full transition-all duration-300 w-1/6"></div>
-                    </div>
-                </div>
+<div id="stepQuestions" class="hidden space-y-6">
 
-                <!-- Question Card -->
-                <div class="bg-gradient-to-br from-slate-50 to-cyan-50/20 p-6 sm:p-8 rounded-3xl border border-slate-200 text-center space-y-4">
-                    
-                    <span id="cardEmoji" class="text-6xl inline-block animate-bounce">🎯</span>
+    <!-- Progress bar & counter -->
+    <div>
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
+            <span id="questionCounter">Pertanyaan 1 dari 6</span>
+            <span id="categoryPill" class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-cyan-100 text-et-cyan">Kids Test</span>
+        </div>
+        <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+            <div id="progressBar" class="h-full bg-gradient-to-r from-et-cyan to-et-pink rounded-full transition-all duration-300 w-1/6"></div>
+        </div>
+    </div>
 
-                    <h2 id="cardQuestion" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
-                        Loading question...
-                    </h2>
+    <!-- Top Media / Reading Card (YouTube Player OR Reading Passage) -->
+    <div id="topMediaCard" class="bg-gradient-to-br from-slate-50 to-cyan-50/20 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-4">
 
-                    <p id="cardSubText" class="text-xs sm:text-sm text-slate-500 font-medium">
-                        Pilih jawaban yang paling tepat:
-                    </p>
-
-                    <!-- Text-to-Speech Audio Button -->
-                    <div class="pt-2">
-                        <button type="button" id="btnAudioPrompt" onclick="playAudioSpeech()" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-et-cyan text-slate-700 hover:text-et-cyan shadow-sm transition-all text-xs font-bold group">
-                            <span class="text-base group-hover:scale-110 transition-transform">🔊</span>
-                            <span>Dengarkan Pengucapan (Audio)</span>
-                            <div class="sound-wave text-et-cyan hidden" id="audioWave">
-                                <span></span><span></span><span></span><span></span>
-                            </div>
-                        </button>
-                    </div>
-
-                </div>
-
-                <!-- Options Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2" id="optionsContainer">
-                    <!-- Dynamic Options -->
-                </div>
-
-                <!-- Next Button -->
-                <div class="pt-4 flex items-center justify-between">
-                    <span class="text-xs text-slate-400 font-medium">Pilih salah satu jawaban di atas</span>
-                    <button type="button" id="btnNext" onclick="nextQuestion()" disabled class="px-8 py-3.5 rounded-2xl bg-et-pink text-white font-extrabold text-sm shadow-md disabled:opacity-40 disabled:cursor-not-allowed hover:bg-et-pink-hover transition-all">
-                        Lanjut Soal Berikutnya &rarr;
-                    </button>
-                </div>
-
+        <!-- Mode A: YouTube Embed Player (tampil jika question_type === 'youtube') -->
+        <div id="youtubeWrapper" class="hidden">
+            <div class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+                <iframe
+                    id="youtubeFrame"
+                    src=""
+                    title="YouTube video player"
+                    class="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
             </div>
+        </div>
+
+        <!-- Mode B: Soal Bacaan / Pertanyaan Biasa (tampil jika question_type === 'reading') -->
+        <div id="readingWrapper" class="hidden text-left space-y-3">
+            <div id="readingPassage" class="hidden p-4 rounded-2xl bg-white border border-slate-200 text-sm text-slate-700 leading-relaxed"></div>
+            <h2 id="topQuestionText" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
+                Loading question...
+            </h2>
+            <p id="topSubText" class="text-xs sm:text-sm text-slate-500 font-medium">
+                Pilih jawaban yang paling tepat:
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Soal Khusus Saat Tipe YouTube (diletakkan tepat di atas pilihan jawaban) -->
+    <div id="aboveOptionsQuestion" class="hidden space-y-1 pt-1">
+        <h2 id="bottomQuestionText" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug"></h2>
+        <p id="bottomSubText" class="text-xs sm:text-sm text-slate-500 font-medium"></p>
+    </div>
+
+    <!-- Options Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1" id="optionsContainer">
+        <!-- Dynamic Options -->
+    </div>
+
+    <!-- Next Button -->
+    <div class="pt-4 flex items-center justify-between">
+        <span class="text-xs text-slate-400 font-medium">Pilih salah satu jawaban di atas</span>
+        <button type="button" id="btnNext" onclick="nextQuestion()" disabled class="px-8 py-3.5 rounded-2xl bg-et-pink text-white font-extrabold text-sm shadow-md disabled:opacity-40 disabled:cursor-not-allowed hover:bg-et-pink-hover transition-all">
+            Lanjut Soal Berikutnya &rarr;
+        </button>
+    </div>
+
+</div>
 
             <!-- STEP 4: PROCESSING / CALCULATING ANIMATION -->
             <div id="stepProcessing" class="hidden py-16 text-center space-y-6">
@@ -402,6 +414,19 @@
         answers: {}, // questionId -> selectedIndex
     };
 
+    function stripEmoji(text = '') {
+        return String(text)
+            .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, '')
+            .replace(/\s{2,}/g, ' ')
+            .trim();
+    }
+
+    function extractYouTubeId(urlOrId = '') {
+        if (!urlOrId) return '';
+        const match = String(urlOrId).match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([A-Za-z0-9_-]{11})/);
+        return match ? match[1] : String(urlOrId).trim();
+    }
+
     function handleBimbelChange(val) {
         quizState.has_bimbel = val;
         const container = document.getElementById('containerBimbelDuration');
@@ -482,7 +507,7 @@
         }
     }
 
-    // Step 3: Render Question
+    // Step 3: Render Question (YouTube vs Reading/Pertanyaan Biasa, tanpa emoji)
     function renderCurrentQuestion() {
         const q = quizState.questions[quizState.currentIndex];
         const total = quizState.questions.length;
@@ -494,9 +519,50 @@
         const catLabels = { 'kids': 'Kids Test (4-8 Thn)', 'teens': 'Teens Test (9-15 Thn)', 'adults': 'Adults Test (16+ Thn)' };
         document.getElementById('categoryPill').textContent = catLabels[quizState.category] || 'Level Test';
 
-        document.getElementById('cardEmoji').textContent = q.emoji || '🎯';
-        document.getElementById('cardQuestion').textContent = q.question;
-        document.getElementById('cardSubText').textContent = q.sub_text || 'Pilih jawaban yang paling tepat:';
+        const cleanQuestion = stripEmoji(q.question || '');
+        const cleanSubText = stripEmoji(q.sub_text || 'Pilih jawaban yang paling tepat:');
+        const cleanReading = stripEmoji(q.reading_text || '');
+        const normalizedType = String(q.question_type || '').trim().toLowerCase();
+        const isYouTube = normalizedType === 'youtube' || Boolean(q.youtube_url || q.youtube_id);
+
+        const youtubeWrapper = document.getElementById('youtubeWrapper');
+        const youtubeFrame = document.getElementById('youtubeFrame');
+        const readingWrapper = document.getElementById('readingWrapper');
+        const readingPassage = document.getElementById('readingPassage');
+        const topQuestionText = document.getElementById('topQuestionText');
+        const topSubText = document.getElementById('topSubText');
+        const aboveOptionsQuestion = document.getElementById('aboveOptionsQuestion');
+        const bottomQuestionText = document.getElementById('bottomQuestionText');
+        const bottomSubText = document.getElementById('bottomSubText');
+
+        // Reset media & posisi soal
+        if (youtubeFrame) youtubeFrame.src = '';
+        if (youtubeWrapper) youtubeWrapper.classList.add('hidden');
+        if (readingWrapper) readingWrapper.classList.add('hidden');
+        if (readingPassage) {
+            readingPassage.classList.add('hidden');
+            readingPassage.textContent = '';
+        }
+        if (aboveOptionsQuestion) aboveOptionsQuestion.classList.add('hidden');
+
+        if (isYouTube) {
+            const videoId = extractYouTubeId(q.youtube_url || q.youtube_id);
+            if (videoId && youtubeFrame && youtubeWrapper) {
+                youtubeFrame.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+                youtubeWrapper.classList.remove('hidden');
+            }
+            if (bottomQuestionText) bottomQuestionText.textContent = cleanQuestion;
+            if (bottomSubText) bottomSubText.textContent = cleanSubText;
+            if (aboveOptionsQuestion) aboveOptionsQuestion.classList.remove('hidden');
+        } else {
+            if (cleanReading && readingPassage) {
+                readingPassage.textContent = cleanReading;
+                readingPassage.classList.remove('hidden');
+            }
+            if (topQuestionText) topQuestionText.textContent = cleanQuestion;
+            if (topSubText) topSubText.textContent = cleanSubText;
+            if (readingWrapper) readingWrapper.classList.remove('hidden');
+        }
 
         // Render options
         const container = document.getElementById('optionsContainer');
@@ -517,7 +583,7 @@
             const letter = String.fromCharCode(65 + idx); // A, B, C, D
             btn.innerHTML = `
                 <span class="w-8 h-8 rounded-xl ${isSelected ? 'bg-et-cyan text-white' : 'bg-slate-100 text-slate-600'} flex items-center justify-center font-black text-xs shrink-0">${letter}</span>
-                <span class="leading-snug">${opt}</span>
+                <span class="leading-snug">${stripEmoji(opt)}</span>
             `;
 
             btn.onclick = () => selectOption(q.id, idx);
@@ -526,7 +592,7 @@
 
         const btnNext = document.getElementById('btnNext');
         btnNext.disabled = (previouslySelected === undefined);
-        btnNext.textContent = (currentNum === total) ? 'Selesai & Lihat Hasil 🎉' : 'Lanjut Soal Berikutnya →';
+        btnNext.textContent = (currentNum === total) ? 'Selesai & Lihat Hasil' : 'Lanjut Soal Berikutnya →';
     }
 
     function selectOption(questionId, optionIndex) {
@@ -535,6 +601,12 @@
     }
 
     function nextQuestion() {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+        const wave = document.getElementById('audioWave');
+        if (wave) wave.classList.add('hidden');
+
         if (quizState.currentIndex < quizState.questions.length - 1) {
             quizState.currentIndex++;
             renderCurrentQuestion();
@@ -543,16 +615,16 @@
         }
     }
 
-    // Audio Speech Synthesis
+    // Audio Speech Synthesis (tetap dipertahankan jika masih dipakai soal non-YouTube)
     function playAudioSpeech() {
         const q = quizState.questions[quizState.currentIndex];
         const speechText = q.speech_text || q.question;
 
         if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel(); // stop current
-            const utterance = new SpeechSynthesisUtterance(speechText);
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(stripEmoji(speechText));
             utterance.lang = 'en-US';
-            utterance.rate = (quizState.category === 'kids') ? 0.85 : 0.95; // kids slightly slower
+            utterance.rate = (quizState.category === 'kids') ? 0.85 : 0.95;
 
             const wave = document.getElementById('audioWave');
             if (wave) wave.classList.remove('hidden');
@@ -572,10 +644,15 @@
 
     // Step 4: Submit and display animated results
     async function finishQuiz() {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+        const youtubeFrame = document.getElementById('youtubeFrame');
+        if (youtubeFrame) youtubeFrame.src = '';
+
         document.getElementById('stepQuestions').classList.add('hidden');
         document.getElementById('stepProcessing').classList.remove('hidden');
 
-        // Playful stages
         const stages = [
             'Mengumpulkan jawaban kamu...',
             'Menganalisis kemampuan Speaking & Kosakata...',
@@ -639,7 +716,6 @@
         document.getElementById('resScore').textContent = `${data.score}%`;
         document.getElementById('resCefr').textContent = data.cefr_level;
 
-        // Populate Placement Test Identitas Summary
         document.getElementById('resIdentityName').textContent = data.name || quizState.name;
         document.getElementById('resIdentityWhatsapp').textContent = data.whatsapp || quizState.whatsapp;
         document.getElementById('resIdentityBimbel').textContent = data.has_bimbel || quizState.has_bimbel;
@@ -647,7 +723,6 @@
         document.getElementById('resIdentityBranch').textContent = data.branch || quizState.branch;
         document.getElementById('resIdentityScore').textContent = `${data.score}% (${data.correct_answers || 0}/${data.total_questions || 6} Benar)`;
 
-        // Skill Breakdown
         const sb = data.skill_breakdown || {};
         const vocab = sb.vocabulary || 80;
         const grammar = sb.grammar || 75;
@@ -662,19 +737,16 @@
         document.getElementById('resSpeaking').textContent = `${speaking}%`;
         document.getElementById('barSpeaking').style.width = `${speaking}%`;
 
-        // Recommended Program
         if (data.recommended_program) {
             document.getElementById('recBadge').textContent = data.recommended_program.badge || 'Rekomendasi Kelas';
             document.getElementById('recTitle').textContent = data.recommended_program.title;
             document.getElementById('recDesc').textContent = data.recommended_program.description;
         }
 
-        // WhatsApp CTA
         if (data.whatsapp_url) {
             document.getElementById('btnClaimWa').href = data.whatsapp_url;
         }
 
-        // Review Items with Trick Tips
         const reviewList = document.getElementById('reviewList');
         reviewList.innerHTML = '';
 
@@ -683,14 +755,14 @@
                 const card = document.createElement('div');
                 card.className = `p-4 rounded-2xl border ${item.is_correct ? 'border-emerald-200 bg-emerald-50/40' : 'border-red-200 bg-red-50/40'} space-y-2`;
                 
-                const userText = item.user_choice !== null ? item.options[item.user_choice] : '-';
-                const correctText = item.options[item.correct_index];
+                const userText = item.user_choice !== null ? stripEmoji(item.options[item.user_choice]) : '-';
+                const correctText = stripEmoji(item.options[item.correct_index]);
 
                 card.innerHTML = `
                     <div class="flex items-start justify-between gap-3">
                         <div class="flex items-center gap-2 font-black text-sm text-slate-800">
                             <span>${item.is_correct ? '✅' : '❌'}</span>
-                            <span>Soal #${i + 1}: ${item.question}</span>
+                            <span>Soal #${i + 1}: ${stripEmoji(item.question)}</span>
                         </div>
                         <span class="text-[11px] font-bold px-2 py-0.5 rounded-full ${item.is_correct ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">
                             ${item.is_correct ? 'Benar' : 'Perlu Diperbaiki'}
@@ -702,7 +774,7 @@
                     </div>
                     ${item.trick_tip ? `
                     <div class="mt-2 p-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 pl-3">
-                        <span class="font-black text-et-pink">💡 English Trick:</span> ${item.trick_tip}
+                        <span class="font-black text-et-pink">💡 English Trick:</span> ${stripEmoji(item.trick_tip)}
                     </div>` : ''}
                 `;
                 reviewList.appendChild(card);

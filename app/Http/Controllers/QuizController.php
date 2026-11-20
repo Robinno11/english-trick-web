@@ -35,7 +35,7 @@ class QuizController extends Controller
 
         $questions = QuizQuestion::where('category', $category)
             ->orderBy('order')
-            ->select(['id', 'category', 'question', 'sub_text', 'emoji', 'options', 'speech_text', 'skill_focus', 'order'])
+            ->select(['id', 'category', 'question_type', 'youtube_url','reading_text','question', 'sub_text', 'emoji', 'options', 'speech_text', 'skill_focus', 'order'])
             ->get();
 
         return response()->json([
