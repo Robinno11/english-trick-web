@@ -12,7 +12,7 @@
                 <span>🎯 Interactive Placement Test</span>
             </div>
             <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                Cari Tahu Level Bahasa Inggrismu dalam <span class="text-transparent bg-clip-text bg-gradient-to-r from-et-cyan to-et-pink">3 Menit!</span>
+                Cari Tahu Level Bahasa Inggrismu dalam <span class="text-transparent bg-clip-text bg-gradient-to-r from-et-cyan to-et-pink">15 Menit!</span>
             </h1>
             <p class="text-slate-600 text-sm sm:text-base">
                 Asesmen interaktif dengan audio native. Ketahui estimasi CEFR kamu sekarang!
@@ -271,7 +271,7 @@
                 <div class="bg-gradient-to-r from-cyan-500 via-teal-500 to-et-pink p-8 sm:p-10 rounded-3xl text-white text-center space-y-4 shadow-xl relative overflow-hidden">
                     <span class="text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-white/20">English Trick Level Report</span>
                     <h2 class="text-3xl sm:text-4xl font-black">
-                        Luar Biasa, <span id="resName">Siswa</span>! 🎉
+                        Luar Biasa🎉
                     </h2>
                     <p class="text-sm text-cyan-100 max-w-md mx-auto">
                         Kamu telah menyelesaikan tes penempatan level bahasa Inggris dengan sangat baik.
@@ -293,7 +293,7 @@
                 <div class="bg-white p-6 rounded-3xl border-2 border-slate-100 shadow-md space-y-4">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                         <h3 class="font-black text-slate-900 text-sm uppercase tracking-wider flex items-center gap-2">
-                            <span>📋</span> Placement Test Identitas
+                            <span>📋</span> Identitas
                         </h3>
                         <span class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-emerald-100 text-emerald-700">Hasil Selesai</span>
                     </div>
@@ -304,23 +304,23 @@
                             <span class="font-extrabold text-slate-800" id="resIdentityName">-</span>
                         </div>
                         <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">No Wa</span>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Umur</span>
                             <span class="font-extrabold text-slate-800" id="resIdentityWhatsapp">-</span>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
+                        <!-- <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
                             <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Bimbel?</span>
                             <span class="font-extrabold text-slate-800" id="resIdentityBimbel">-</span>
                         </div>
                         <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
                             <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">If sudah berapa lama?</span>
                             <span class="font-extrabold text-slate-800" id="resIdentityDuration">-</span>
-                        </div>
+                        </div> -->
                         <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Pilih cabang terdekat</span>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Rencana Kursus</span>
                             <span class="font-extrabold text-slate-800" id="resIdentityBranch">-</span>
                         </div>
                         <div class="p-3 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200">
-                            <span class="text-[11px] font-black uppercase tracking-wider text-emerald-600 block mb-0.5">Nilai (setelah selesai tes)</span>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-emerald-600 block mb-0.5">Skor</span>
                             <span class="font-black text-emerald-700 text-lg" id="resIdentityScore">-</span>
                         </div>
                     </div>
@@ -330,7 +330,8 @@
                 <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 space-y-4">
                     <h3 class="font-black text-slate-900 text-sm uppercase tracking-wider">Analisis Kemampuanmu:</h3>
                     
-                    <div class="space-y-3">
+                    <!-- UBAH BARIS DI BAWAH INI -->
+                    <div class="space-y-3 blur-sm select-none pointer-events-none">
                         <div>
                             <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
                                 <span>Vocabulary & Kosakata</span>
@@ -363,18 +364,18 @@
                     </div>
                 </div>
 
-                <!-- Recommended Program Card -->
+                <!-- Recommended Program Card 
                 <div class="p-6 rounded-3xl bg-white border-2 border-et-cyan shadow-lg space-y-3">
                     <span class="text-xs font-black uppercase text-et-pink bg-pink-50 px-3 py-1 rounded-full" id="recBadge">Rekomendasi Kelas</span>
                     <h3 class="text-xl font-black text-slate-900" id="recTitle">Program Kursus</h3>
                     <p class="text-sm text-slate-600 leading-relaxed" id="recDesc">Deskripsi rekomendasi program terbaik.</p>
-                </div>
+                </div> -->
 
                 <!-- Action Button to WhatsApp -->
                 <div class="space-y-3 pt-2">
                     <a id="btnClaimWa" href="#" target="_blank" class="w-full py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-base text-center shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 hover:scale-[1.01] transition-all">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        <span>Klaim Hasil & Konsultasi Free Trial via WhatsApp &rarr;</span>
+                        <span>Konsultasikan Program Les Yang Cocok Untukmu</span>
                     </a>
 
                     <div class="flex items-center justify-center gap-4 pt-2">
@@ -387,15 +388,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Review Section with English Tricks -->
-                <div class="border-t border-slate-200 pt-8 space-y-4">
-                    <h3 class="text-lg font-black text-slate-900">Bongkar Trik Jawaban Soal Ini:</h3>
-                    <div id="reviewList" class="space-y-4">
-                        <!-- Review cards generated by JS -->
-                    </div>
-                </div>
-
             </div>
 
         </div>
@@ -775,77 +767,71 @@
     }
 
     // Step 5: Display Results
-    function displayResults(data) {
-        document.getElementById('stepProcessing').classList.add('hidden');
-        document.getElementById('stepResults').classList.remove('hidden');
+    function displayResults(rawData) {
+        const data = (rawData && (rawData.data || rawData.result)) ? (rawData.data || rawData.result) : (rawData || {});
 
-        document.getElementById('resName').textContent = data.name;
-        document.getElementById('resScore').textContent = `${data.score}%`;
-        document.getElementById('resCefr').textContent = data.cefr_level;
+        const setText = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = value;
+        };
 
-        document.getElementById('resIdentityName').textContent = data.name || quizState.name;
-        document.getElementById('resIdentityWhatsapp').textContent = data.whatsapp || quizState.whatsapp;
-        document.getElementById('resIdentityBimbel').textContent = data.has_bimbel || quizState.has_bimbel;
-        document.getElementById('resIdentityDuration').textContent = (data.has_bimbel === 'Sudah' ? (data.bimbel_duration || quizState.bimbel_duration) : '-');
-        document.getElementById('resIdentityBranch').textContent = data.branch || quizState.branch;
-        document.getElementById('resIdentityScore').textContent = `${data.score}% (${data.correct_answers || 0}/${data.total_questions || 6} Benar)`;
+        const setWidth = (id, pct) => {
+            const el = document.getElementById(id);
+            if (el) el.style.width = `${pct}%`;
+        };
+
+        const stepProcessing = document.getElementById('stepProcessing');
+        const stepResults = document.getElementById('stepResults');
+        if (stepProcessing) stepProcessing.classList.add('hidden');
+        if (stepResults) stepResults.classList.remove('hidden');
+
+        const scoreVal = data.score ?? 0;
+        const correctCount = data.correct_answers ?? 0;
+        const totalCount = data.total_questions ?? (Array.isArray(quizState.questions) ? quizState.questions.length : 0);
+
+        setText('resName', data.name || quizState.name || '-');
+        setText('resScore', `${scoreVal}%`);
+        setText('resCefr', data.cefr_level || '-');
+
+        setText('resIdentityName', data.name || quizState.name || '-');
+        setText('resIdentityWhatsapp', data.whatsapp || quizState.whatsapp || '-');
+        setText('resIdentityBimbel', data.has_bimbel || quizState.has_bimbel || '-');
+        setText('resIdentityDuration', (data.has_bimbel === 'Sudah' ? (data.bimbel_duration || quizState.bimbel_duration || '-') : '-'));
+        setText('resIdentityBranch', data.branch || quizState.branch || '-');
+        setText('resIdentityScore', `${scoreVal}% (${correctCount}/${totalCount} Benar)`);
 
         const sb = data.skill_breakdown || {};
-        const vocab = sb.vocabulary || 80;
-        const grammar = sb.grammar || 75;
-        const speaking = sb.speaking || 85;
+        const vocab = sb.vocabulary ?? 80;
+        const grammar = sb.grammar ?? 75;
+        const speaking = sb.speaking ?? 85;
 
-        document.getElementById('resVocab').textContent = `${vocab}%`;
-        document.getElementById('barVocab').style.width = `${vocab}%`;
+        setText('resVocab', `${vocab}%`);
+        setWidth('barVocab', vocab);
 
-        document.getElementById('resGrammar').textContent = `${grammar}%`;
-        document.getElementById('barGrammar').style.width = `${grammar}%`;
+        setText('resGrammar', `${grammar}%`);
+        setWidth('barGrammar', grammar);
 
-        document.getElementById('resSpeaking').textContent = `${speaking}%`;
-        document.getElementById('barSpeaking').style.width = `${speaking}%`;
+        setText('resSpeaking', `${speaking}%`);
+        setWidth('barSpeaking', speaking);
 
         if (data.recommended_program) {
-            document.getElementById('recBadge').textContent = data.recommended_program.badge || 'Rekomendasi Kelas';
-            document.getElementById('recTitle').textContent = data.recommended_program.title;
-            document.getElementById('recDesc').textContent = data.recommended_program.description;
+            setText('recBadge', data.recommended_program.badge || 'Rekomendasi Kelas');
+            setText('recTitle', data.recommended_program.title || '');
+            setText('recDesc', data.recommended_program.description || '');
         }
 
-        if (data.whatsapp_url) {
-            document.getElementById('btnClaimWa').href = data.whatsapp_url;
+        const btnClaimWa = document.getElementById('btnClaimWa');
+        if (btnClaimWa && data.whatsapp_url) {
+            btnClaimWa.href = data.whatsapp_url;
         }
 
         const reviewList = document.getElementById('reviewList');
-        reviewList.innerHTML = '';
-
-        if (data.review_items) {
-            data.review_items.forEach((item, i) => {
-                const card = document.createElement('div');
-                card.className = `p-4 rounded-2xl border ${item.is_correct ? 'border-emerald-200 bg-emerald-50/40' : 'border-red-200 bg-red-50/40'} space-y-2`;
-                
-                const userText = item.user_choice !== null ? stripEmoji(item.options[item.user_choice]) : '-';
-                const correctText = stripEmoji(item.options[item.correct_index]);
-
-                card.innerHTML = `
-                    <div class="flex items-start justify-between gap-3">
-                        <div class="flex items-center gap-2 font-black text-sm text-slate-800">
-                            <span>${item.is_correct ? '✅' : '❌'}</span>
-                            <span>Soal #${i + 1}: ${stripEmoji(item.question)}</span>
-                        </div>
-                        <span class="text-[11px] font-bold px-2 py-0.5 rounded-full ${item.is_correct ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">
-                            ${item.is_correct ? 'Benar' : 'Perlu Diperbaiki'}
-                        </span>
-                    </div>
-                    <div class="text-xs text-slate-600 space-y-1 pl-6">
-                        <p>Jawaban Kamu: <strong>${userText}</strong></p>
-                        ${!item.is_correct ? `<p class="text-emerald-700 font-bold">Jawaban Tepat: ${correctText}</p>` : ''}
-                    </div>
-                    ${item.trick_tip ? `
-                    <div class="mt-2 p-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 pl-3">
-                        <span class="font-black text-et-pink">💡 English Trick:</span> ${stripEmoji(item.trick_tip)}
-                    </div>` : ''}
-                `;
-                reviewList.appendChild(card);
-            });
+        if (reviewList) {
+            reviewList.innerHTML = '';
+            const reviewSection = reviewList.closest('section, div[id*="review"], .review-section');
+            if (reviewSection && reviewSection !== reviewList) {
+                reviewSection.classList.add('hidden');
+            }
         }
     }
 </script>
