@@ -108,8 +108,8 @@
                     </div>
 
                     <div>
-                        <label for="quiz_whatsapp" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Umur</label>
-                        <input type="tel" id="quiz_whatsapp" required placeholder="Masukan umur" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                        <label for="quiz_age" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Umur</label>
+                        <input type="tel" id="quiz_age" required placeholder="Masukan umur" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
                     </div>
 
                     <div>
@@ -133,8 +133,8 @@
                     </div>
 
                     <div id="containerBimbelDuration" class="hidden space-y-1">
-                        <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Apa Bimbel Yang Pernah Anda Ikuti</label>
-                        <select id="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
+                        <label for="quiz_bimbel_type" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Apa Bimbel Yang Pernah Anda Ikuti</label>
+                        <select id="quiz_bimbel_type" name="quiz_bimbel_type" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
                             <option value="" disabled selected>-- Pilih Bimbel --</option>
                             <option value="English for Kids">English for Kids</option>
                             <option value="English for Teens (Junior High & High School)">English for Teens (Junior High & High School)</option>
@@ -145,7 +145,7 @@
                         </select>
 
                         <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Berapa Lama Anda Kursus</label>
-                        <select id="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
+                        <select id="quiz_bimbel_duration" name="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
                             <option value="" disabled selected>-- Pilih Durasi --</option>
                             <option value="Kurang dari 6 bulan">&lt; 6 Bulan</option>
                             <option value="6 - 12 bulan">6 - 12 Bulan</option>
@@ -153,8 +153,8 @@
                             <option value="Lebih dari 2 tahun">&gt; 2 Tahun</option>
                         </select>
 
-                        <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Dicabang Mana Anda Pernah Mengikuti Bimbel</label>
-                        <select id="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
+                        <label for="quiz_bimbel_branch" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Dicabang Mana Anda Pernah Mengikuti Bimbel</label>
+                        <select id="quiz_bimbel_branch" name="quiz_bimbel_branch" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
                             <option value="" disabled selected>-- Pilih Cabang --</option>
                             <option value="Karangbong">Karangbong</option>
                             <option value="Damarsi">Damarsi</option>
@@ -289,7 +289,7 @@
                     </div>
                 </div>
 
-                <!-- Placement Test Identitas Summary Card -->
+                <!-- Identitas Summary Card -->
                 <div class="bg-white p-6 rounded-3xl border-2 border-slate-100 shadow-md space-y-4">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                         <h3 class="font-black text-slate-900 text-sm uppercase tracking-wider flex items-center gap-2">
@@ -305,7 +305,7 @@
                         </div>
                         <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
                             <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Umur</span>
-                            <span class="font-extrabold text-slate-800" id="resIdentityWhatsapp">-</span>
+                            <span class="font-extrabold text-slate-800" id="resIdentityAge">-</span>
                         </div>
                         <!-- <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
                             <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Bimbel?</span>
@@ -398,18 +398,172 @@
 
 @push('scripts')
 <script>
-    // Quiz State
+    // Quiz Stat
     let quizState = {
         category: 'kids',
-        name: '',
+        has_bimbel: 'Belum Pernah', // penanda pilihan "Pernah" atau "Belum Pernah" di form
+        nama: '',
+        umur: '',
         whatsapp: '',
-        has_bimbel: 'Belum',
-        bimbel_duration: '',
-        branch: '',
+        jenis_bimbel: '',
+        lama_kursus: '',
+        cabang: '',
+        rencana_cabang: '',
+        jawaban: '',
+        skor: '',
         questions: [],
         currentIndex: 0,
         answers: {}, // questionId -> selectedIndex
     };
+
+    function syncIdentityToQuizState() {
+        const getByIdOrPrev = (ids = [], fallbackPrev = '') => {
+            for (const id of ids) {
+                const el = document.getElementById(id);
+                if (el && el.value !== undefined && String(el.value).trim() !== '') {
+                    return String(el.value).trim();
+                }
+            }
+            return String(fallbackPrev || '').trim();
+        };
+
+        const checkedBimbel = document.querySelector(
+            'input[name="quiz_has_bimbel"]:checked, input[name="has_bimbel"]:checked, input[name="pernah_bimbel"]:checked'
+        );
+        const hasBimbelVal = checkedBimbel
+            ? String(checkedBimbel.value).trim()
+            : String(quizState.has_bimbel || 'Belum').trim();
+
+        const isPernah = ['pernah', 'sudah', 'ya', 'yes', 'true', '1'].includes(hasBimbelVal.toLowerCase());
+
+        quizState.has_bimbel = hasBimbelVal;
+        quizState.nama = getByIdOrPrev(['quiz_name', 'inputNama', 'inputName'], quizState.nama);
+        quizState.name = quizState.nama;
+        quizState.umur = getByIdOrPrev(['quiz_age', 'inputUmur', 'inputAge'], quizState.umur);
+        quizState.whatsapp = getByIdOrPrev(['quiz_whatsapp', 'inputWhatsapp', 'inputNoWhatsapp'], quizState.whatsapp);
+        quizState.rencana_cabang = getByIdOrPrev(['quiz_branch', 'inputRencanaCabang', 'inputBranch'], quizState.rencana_cabang);
+        quizState.branch = quizState.rencana_cabang;
+
+        if (isPernah) {
+            quizState.jenis_bimbel = getByIdOrPrev(['quiz_bimbel_type', 'inputJenisBimbel', 'inputBimbel'], quizState.jenis_bimbel);
+            quizState.lama_kursus = getByIdOrPrev(['quiz_bimbel_duration', 'inputLamaKursus', 'inputDuration'], quizState.lama_kursus);
+            quizState.bimbel_duration = quizState.lama_kursus;
+            quizState.cabang = getByIdOrPrev(['quiz_bimbel_branch', 'inputCabang', 'inputPastBranch'], quizState.cabang);
+        } else {
+            quizState.jenis_bimbel = '';
+            quizState.lama_kursus = '';
+            quizState.bimbel_duration = '';
+            quizState.cabang = '';
+        }
+    }
+
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxHA1mt7pvXBsJLZGGMOoofHfOScF-tJm_ZHecBPVfpD8AvX22_Mps84bHSpIIkJh3F/exec';
+    const APPS_SCRIPT_KEY = 'englishtrickaja';
+
+    function formatAnswersUpToFiveOptions(questions = [], answers = {}) {
+    if (!Array.isArray(questions) || !answers) return '';
+
+    return questions
+        .map((q, idx) => {
+            const rawIdx = answers[q.id];
+            const chosenIdx = Number(rawIdx);
+            if (rawIdx === undefined || rawIdx === null || rawIdx === '' || Number.isNaN(chosenIdx) || chosenIdx < 0) {
+                return null;
+            }
+            const maxOpts = Array.isArray(q.options) && q.options.length > 0
+                ? Math.min(q.options.length, 5)
+                : 5;
+            if (chosenIdx >= maxOpts) {
+                return null;
+            }
+            const letter = String.fromCharCode(65 + chosenIdx); // 0..4 -> A..E
+            return `${idx + 1}${letter}`;
+        })
+        .filter(Boolean)
+        .join(',');
+    }
+
+    function getOptionalField(resultData, stateObj, keys = [], fallbackIds = []) {
+        for (const k of keys) {
+            if (resultData && resultData[k] !== undefined && resultData[k] !== null && String(resultData[k]).trim() !== '') {
+                return String(resultData[k]).trim();
+            }
+        }
+        for (const k of keys) {
+            if (stateObj && stateObj[k] !== undefined && stateObj[k] !== null && String(stateObj[k]).trim() !== '') {
+                return String(stateObj[k]).trim();
+            }
+        }
+        for (const id of fallbackIds) {
+            const el = document.getElementById(id);
+            if (el) {
+                if (el.closest('.hidden')) continue;
+                const val = ('value' in el && el.value !== undefined) ? el.value : el.textContent;
+                if (val !== undefined && val !== null && String(val).trim() !== '' && String(val).trim() !== '-') {
+                    return String(val).trim();
+                }
+            }
+        }
+        return '';
+    }
+
+    function buildFormattedScore(resultData = {}) {
+        const score = resultData.score ?? 0;
+        const correct = resultData.correct_answers;
+        const total = resultData.total_questions ?? (Array.isArray(quizState.questions) ? quizState.questions.length : 0);
+
+        if (correct !== undefined && correct !== null && total > 0) {
+            return `${score}% (${correct}/${total} Benar)`;
+        }
+        return `${score}%`;
+    }
+
+    async function postPlacementToAppsScript(resultData = {}) {
+        if (!APPS_SCRIPT_URL) return;
+
+        // Pastikan data identitas terbaru ikut tersinkron
+        syncIdentityToQuizState();
+
+        const isPernah = ['pernah', 'sudah', 'ya', 'yes', 'true', '1'].includes(
+            String(quizState.has_bimbel || '').trim().toLowerCase()
+        );
+
+        quizState.jawaban = formatAnswersUpToFiveOptions(quizState.questions, quizState.answers);
+        quizState.skor = buildFormattedScore(resultData);
+
+        if (!isPernah) {
+            quizState.jenis_bimbel = '';
+            quizState.lama_kursus = '';
+            quizState.cabang = '';
+        }
+
+        const payload = {
+            api_key: APPS_SCRIPT_KEY,
+            nama: String(quizState.nama || '').trim(),
+            umur: String(quizState.umur || '').trim(),
+            whatsapp: String(quizState.whatsapp || '').trim(),
+            jenis_bimbel: String(quizState.jenis_bimbel || '').trim(),
+            lama_kursus: String(quizState.lama_kursus || '').trim(),
+            cabang: String(quizState.cabang || '').trim(),
+            rencana_cabang: String(quizState.rencana_cabang || '').trim(),
+            jawaban: String(quizState.jawaban || '').trim(),
+            skor: String(quizState.skor || '').trim(),
+        };
+
+        try {
+            await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                referrerPolicy: 'no-referrer',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify(payload),
+            });
+        } catch (err) {
+            console.error('Gagal mengirim data ke Google Apps Script:', err);
+        }
+    }
 
     function stripEmoji(text = '') {
         return String(text)
@@ -427,15 +581,25 @@
     function handleBimbelChange(val) {
         quizState.has_bimbel = val;
         const container = document.getElementById('containerBimbelDuration');
+        const typeSelect = document.getElementById('quiz_bimbel_type');
         const durationSelect = document.getElementById('quiz_bimbel_duration');
+        const branchSelect = document.getElementById('quiz_bimbel_branch');
+
         if (val === 'Sudah') {
             container.classList.remove('hidden');
-            durationSelect.required = true;
+            if (durationSelect) durationSelect.required = true;
         } else {
             container.classList.add('hidden');
-            durationSelect.required = false;
-            durationSelect.value = '';
+            if (typeSelect) typeSelect.value = '';
+            if (durationSelect) {
+                durationSelect.required = false;
+                durationSelect.value = '';
+            }
+            if (branchSelect) branchSelect.value = '';
+            quizState.jenis_bimbel = '';
+            quizState.lama_kursus = '';
             quizState.bimbel_duration = '';
+            quizState.cabang = '';
         }
     }
 
@@ -458,6 +622,7 @@
     async function startQuiz(e) {
         e.preventDefault();
         quizState.name = document.getElementById('quiz_name').value.trim();
+        quizState.umur = document.getElementById('quiz_age')?.value.trim();
         quizState.whatsapp = document.getElementById('quiz_whatsapp').value.trim();
 
         const bimbelRadio = document.querySelector('input[name="quiz_has_bimbel"]:checked');
@@ -702,6 +867,7 @@
     }
 
     // Step 4: Submit and display animated results
+    // Step 4: Submit and display animated results
     async function finishQuiz() {
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
@@ -727,6 +893,8 @@
             }
         }, 600);
 
+        syncIdentityToQuizState();
+
         try {
             const res = await fetch('/quiz/submit', {
                 method: 'POST',
@@ -736,11 +904,16 @@
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    name: quizState.name,
-                    whatsapp: quizState.whatsapp,
-                    has_bimbel: quizState.has_bimbel,
-                    bimbel_duration: quizState.bimbel_duration,
-                    branch: quizState.branch,
+                    name: quizState.nama || quizState.name || '',
+                    umur: quizState.umur || '',
+                    whatsapp: quizState.whatsapp || '',
+                    has_bimbel: quizState.has_bimbel || 'Belum Pernah',
+                    jenis_bimbel: quizState.jenis_bimbel || '',
+                    bimbel_duration: quizState.lama_kursus || quizState.bimbel_duration || '',
+                    lama_kursus: quizState.lama_kursus || '',
+                    cabang: quizState.cabang || '',
+                    branch: quizState.rencana_cabang || quizState.branch || '',
+                    rencana_cabang: quizState.rencana_cabang || '',
                     category: quizState.category,
                     answers: quizState.answers,
                 })
@@ -752,6 +925,8 @@
             if (data.status === 'success') {
                 setTimeout(() => {
                     displayResults(data);
+                    syncIdentityToQuizState();
+                    postPlacementToAppsScript(data);
                 }, 800);
             } else {
                 alert(data.message || 'Gagal mengirim hasil. Silakan coba lagi.');
@@ -794,6 +969,7 @@
         setText('resCefr', data.cefr_level || '-');
 
         setText('resIdentityName', data.name || quizState.name || '-');
+        setText('resIdentityAge', data.umur || data.age || quizState.umur || quizState.age || '-');
         setText('resIdentityWhatsapp', data.whatsapp || quizState.whatsapp || '-');
         setText('resIdentityBimbel', data.has_bimbel || quizState.has_bimbel || '-');
         setText('resIdentityDuration', (data.has_bimbel === 'Sudah' ? (data.bimbel_duration || quizState.bimbel_duration || '-') : '-'));
