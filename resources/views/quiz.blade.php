@@ -104,17 +104,17 @@
                 <form id="identityForm" onsubmit="startQuiz(event)" class="space-y-4">
                     <div>
                         <label for="quiz_name" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Nama</label>
-                        <input type="text" id="quiz_name" required placeholder="Masukan nama panjang" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                        <input type="text" id="quiz_name" name="quiz_name" required autocomplete="name" placeholder="Masukan nama panjang" oninput="sanitizeNameInput(this)" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
                     </div>
 
                     <div>
                         <label for="quiz_age" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Umur</label>
-                        <input type="tel" id="quiz_age" required placeholder="Masukan umur" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                        <input type="text" id="quiz_age" name="quiz_age" required inputmode="numeric" maxlength="3" placeholder="Masukan umur" oninput="sanitizeDigitsInput(this)" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
                     </div>
 
                     <div>
                         <label for="quiz_whatsapp" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">No Whatsapp</label>
-                        <input type="tel" id="quiz_whatsapp" required placeholder="081234567890" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                        <input type="tel" id="quiz_whatsapp" name="quiz_whatsapp" required inputmode="numeric" maxlength="15" placeholder="081234567890" oninput="sanitizeDigitsInput(this)" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
                         <span class="text-[11px] text-slate-400 mt-1 block">Untuk mengirimkan hasil asesmen & rekomendasi kelas.</span>
                     </div>
 
@@ -588,6 +588,8 @@
         if (val === 'Sudah') {
             container.classList.remove('hidden');
             if (durationSelect) durationSelect.required = true;
+            if (branchSelect) branchSelect.required = true;
+            if (typeSelect) typeSelect.required = true;
         } else {
             container.classList.add('hidden');
             if (typeSelect) typeSelect.value = '';
@@ -618,9 +620,68 @@
         document.getElementById('stepCategory').classList.remove('hidden');
     }
 
+    function sanitizeNameInput(el) {
+        if (!el) return;
+        const cleaned = el.value
+            .replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s'.-]/g, '')
+            .replace(/\s{2,}/g, ' ');
+        if (el.value !== cleaned) {
+            el.value = cleaned;
+        }
+    }
+
+    function sanitizeDigitsInput(el) {
+        if (!el) return;
+        const cleaned = el.value.replace(/\D+/g, '');
+        if (el.value !== cleaned) {
+            el.value = cleaned;
+        }
+    }
+
+    function validateIdentityFields() {
+        const nameEl = document.getElementById('quiz_name');
+        const ageEl = document.getElementById('quiz_age');
+        const waEl = document.getElementById('quiz_whatsapp');
+
+        const nameVal = (nameEl?.value || '').trim().replace(/\s{2,}/g, ' ');
+        const ageVal = (ageEl?.value || '').replace(/\D+/g, '').trim();
+        const waVal = (waEl?.value || '').replace(/\D+/g, '').trim();
+
+        if (nameEl) nameEl.value = nameVal;
+        if (ageEl) ageEl.value = ageVal;
+        if (waEl) waEl.value = waVal;
+
+        const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'.-]{2,}$/;
+        if (!nameVal || !nameRegex.test(nameVal) || !/[A-Za-zÀ-ÖØ-öø-ÿ]/.test(nameVal)) {
+            alert('Nama harus diisi huruf saja (tidak boleh angka atau simbol).');
+            nameEl?.focus();
+            return false;
+        }
+
+        const ageNum = Number(ageVal);
+        if (!ageVal || !/^\d+$/.test(ageVal) || ageNum < 1 || ageNum > 120) {
+            alert('Umur harus diisi angka yang valid (1 - 120).');
+            ageEl?.focus();
+            return false;
+        }
+
+        if (!waVal || !/^\d{8,15}$/.test(waVal)) {
+            alert('Nomor WhatsApp harus diisi angka saja (8 - 15 digit).');
+            waEl?.focus();
+            return false;
+        }
+
+        return true;
+    }
+
     // Step 2: Start Quiz & Fetch questions
     async function startQuiz(e) {
         e.preventDefault();
+
+        if (!validateIdentityFields()) {
+            return;
+        }
+
         quizState.name = document.getElementById('quiz_name').value.trim();
         quizState.umur = document.getElementById('quiz_age')?.value.trim();
         quizState.whatsapp = document.getElementById('quiz_whatsapp').value.trim();
