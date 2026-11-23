@@ -42,7 +42,7 @@
                     </button> -->
 
                     <!-- Teens -->
-                    <button type="button" onclick="selectCategory('teens')" class="group p-6 rounded-3xl border-2 border-b-[6px] border-pink-200 hover:border-et-pink bg-white hover:bg-pink-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
+                    <button type="button" onclick="selectCategory('young')" class="group p-6 rounded-3xl border-2 border-b-[6px] border-pink-200 hover:border-et-pink bg-white hover:bg-pink-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
                         <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🧒</span>
                         <div>
                             <span class="block font-black text-xl text-slate-900 group-hover:text-et-pink">Young Learners</span>
@@ -209,6 +209,24 @@
                     allowfullscreen>
                 </iframe>
             </div>
+        </div>
+
+        <!-- audio -->
+        <div id="voicePlayerWrapper" class="hidden flex flex-col items-center justify-center gap-3 py-4">
+            <button
+                type="button"
+                id="btnVoicePlay"
+                onclick="toggleVoiceAudio()"
+                aria-label="Putar atau jeda suara"
+                class="w-16 h-16 rounded-full bg-et-cyan hover:opacity-90 text-white flex items-center justify-center shadow-lg transition-transform active:scale-95">
+                <svg id="iconVoicePlay" class="w-7 h-7 fill-current ml-0.5" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg id="iconVoicePause" class="w-7 h-7 fill-current hidden" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+            </button>
+            <span id="voiceStatusText" class="text-xs font-bold text-slate-600">Klik tombol Play untuk mendengarkan suara</span>
         </div>
 
         <!-- Mode B: Story Text di atas (question_type === 'story') -->
@@ -414,6 +432,7 @@
         questions: [],
         currentIndex: 0,
         answers: {}, // questionId -> selectedIndex
+        voiceAudioPlayer: null,
     };
 
     function syncIdentityToQuizState() {
@@ -608,7 +627,7 @@
     // Step 1: Select Category
     function selectCategory(cat) {
         quizState.category = cat;
-        const emojiMap = { 'kids': '🐣', 'teens': '🧒', 'adults': '🧑' };
+        const emojiMap = { 'young': '🐣', 'adult': '🧒', 'bersant': '🧑' };
         document.getElementById('identityEmoji').textContent = emojiMap[cat] || '🎯';
         
         document.getElementById('stepCategory').classList.add('hidden');
@@ -731,6 +750,68 @@
         }
     }
 
+    function stopVoiceAudio() {
+        if (quizState.voiceAudioPlayer) {
+            quizState.voiceAudioPlayer.pause();
+            quizState.voiceAudioPlayer.currentTime = 0;
+            quizState.voiceAudioPlayer = null;
+        }
+        const playIcon = document.getElementById('iconVoicePlay');
+        const pauseIcon = document.getElementById('iconVoicePause');
+        const statusEl = document.getElementById('voiceStatusText');
+        if (playIcon) playIcon.classList.remove('hidden');
+        if (pauseIcon) pauseIcon.classList.add('hidden');
+        if (statusEl) statusEl.textContent = 'Klik tombol Play untuk mendengarkan suara';
+    }
+
+    function setupVoiceQuestion(audioSrc) {
+        stopVoiceAudio();
+        const wrapper = document.getElementById('voicePlayerWrapper');
+        const statusEl = document.getElementById('voiceStatusText');
+
+        if (!audioSrc) {
+            if (wrapper) wrapper.classList.add('hidden');
+            return;
+        }
+
+        if (wrapper) wrapper.classList.remove('hidden');
+
+        quizState.voiceAudioPlayer = new Audio(audioSrc);
+        quizState.voiceAudioPlayer.addEventListener('ended', () => {
+            const playIcon = document.getElementById('iconVoicePlay');
+            const pauseIcon = document.getElementById('iconVoicePause');
+            if (playIcon) playIcon.classList.remove('hidden');
+            if (pauseIcon) pauseIcon.classList.add('hidden');
+            if (statusEl) statusEl.textContent = 'Suara selesai diputar — klik untuk memutar ulang';
+        });
+        quizState.voiceAudioPlayer.addEventListener('error', () => {
+            if (statusEl) statusEl.textContent = 'File audio MP3 gagal dimuat.';
+        });
+    }
+
+    function toggleVoiceAudio() {
+        const statusEl = document.getElementById('voiceStatusText');
+        const playIcon = document.getElementById('iconVoicePlay');
+        const pauseIcon = document.getElementById('iconVoicePause');
+
+        if (!quizState.voiceAudioPlayer) return;
+
+        if (quizState.voiceAudioPlayer.paused) {
+            quizState.voiceAudioPlayer.play().then(() => {
+                if (playIcon) playIcon.classList.add('hidden');
+                if (pauseIcon) pauseIcon.classList.remove('hidden');
+                if (statusEl) statusEl.textContent = 'Sedang memutar suara...';
+            }).catch(() => {
+                if (statusEl) statusEl.textContent = 'Gagal memutar suara. Periksa path file MP3.';
+            });
+        } else {
+            quizState.voiceAudioPlayer.pause();
+            if (playIcon) playIcon.classList.remove('hidden');
+            if (pauseIcon) pauseIcon.classList.add('hidden');
+            if (statusEl) statusEl.textContent = 'Dijeda — klik untuk melanjutkan';
+        }
+    }
+
     // Step 3: Render Question (YouTube vs Reading/Pertanyaan Biasa, tanpa emoji)
     function renderCurrentQuestion() {
         const q = quizState.questions[quizState.currentIndex];
@@ -756,6 +837,7 @@
 
         const isYouTube = normalizedType === 'youtube' || (!normalizedType && Boolean(q.youtube_url || q.youtube_id));
         const isStory = normalizedType === 'story';
+        const isVoice = normalizedType === 'voice' || (!normalizedType && Boolean(q.audio_url));
 
         const youtubeWrapper = document.getElementById('youtubeWrapper');
         const youtubeFrame = document.getElementById('youtubeFrame');
@@ -768,9 +850,11 @@
         const aboveOptionsQuestion = document.getElementById('aboveOptionsQuestion');
         const bottomQuestionText = document.getElementById('bottomQuestionText');
         const bottomSubText = document.getElementById('bottomSubText');
+        const voicePlayerWrapper = document.getElementById('voicePlayerWrapper');
 
         // Reset semua mode sebelum merender soal aktif
         if (youtubeFrame) youtubeFrame.src = '';
+        stopVoiceAudio();
         if (youtubeWrapper) youtubeWrapper.classList.add('hidden');
         if (storyWrapper) storyWrapper.classList.add('hidden');
         if (storyText) storyText.textContent = '';
@@ -781,7 +865,12 @@
         }
         if (aboveOptionsQuestion) aboveOptionsQuestion.classList.add('hidden');
 
-        if (isYouTube) {
+        if (isVoice) {
+         setupVoiceQuestion(q.audio_url);
+            if (bottomQuestionText) bottomQuestionText.textContent = cleanQuestion;
+            if (bottomSubText) bottomSubText.textContent = cleanSubText;
+            if (aboveOptionsQuestion) aboveOptionsQuestion.classList.remove('hidden');
+        } else if (isYouTube) {
             const videoId = extractYouTubeId(q.youtube_url || q.youtube_id);
             if (videoId && youtubeFrame && youtubeWrapper) {
                 youtubeFrame.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
@@ -930,6 +1019,7 @@
     // Step 4: Submit and display animated results
     // Step 4: Submit and display animated results
     async function finishQuiz() {
+        stopVoiceAudio()
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
         }
