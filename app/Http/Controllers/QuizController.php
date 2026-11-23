@@ -29,13 +29,13 @@ class QuizController extends Controller
     {
         $category = $request->query('category', 'kids');
 
-        if (! in_array($category, ['kids', 'teens', 'adults'])) {
+        if (! in_array($category, ['kids', 'young', 'adults'])) {
             $category = 'kids';
         }
 
         $questions = QuizQuestion::where('category', $category)
             ->orderBy('order')
-            ->select(['id', 'category', 'question', 'sub_text', 'emoji', 'options', 'speech_text', 'skill_focus', 'order'])
+            ->select(['id', 'category', 'question_type', 'youtube_url','audio_url','reading_text','story_text','question', 'sub_text', 'emoji', 'options','option_images', 'speech_text', 'skill_focus', 'order'])
             ->get();
 
         return response()->json([
@@ -60,7 +60,7 @@ class QuizController extends Controller
             'bimbel_duration' => 'nullable|string|max:100',
             'branch' => 'nullable|string|max:100',
             'email' => 'nullable|email|max:100',
-            'category' => 'required|in:kids,teens,adults',
+            'category' => 'required|in:kids,young,adults',
             'answers' => 'required|array',
         ]);
 
@@ -246,7 +246,7 @@ class QuizController extends Controller
             ];
         }
 
-        if ($category === 'teens') {
+        if ($category === 'young') {
             return [
                 'title' => 'English for Teens (Junior & High School Booster)',
                 'badge' => 'Populer untuk Pelajar SMP & SMA',

@@ -12,10 +12,10 @@
                 <span>🎯 Interactive Placement Test</span>
             </div>
             <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                Cari Tahu Level Bahasa Inggrismu dalam <span class="text-transparent bg-clip-text bg-gradient-to-r from-et-cyan to-et-pink">3 Menit!</span>
+                Cari Tahu Level Bahasa Inggrismu dalam <span class="text-transparent bg-clip-text bg-gradient-to-r from-et-cyan to-et-pink">15 Menit!</span>
             </h1>
             <p class="text-slate-600 text-sm sm:text-base">
-                Asesmen interaktif dengan audio native, kartu pilihan seru, dan trik kilat. Ketahui estimasi CEFR kamu sekarang!
+                Asesmen interaktif dengan audio native. Ketahui estimasi CEFR kamu sekarang!
             </p>
         </div>
 
@@ -26,12 +26,12 @@
             <div id="stepCategory" class="space-y-8">
                 <div class="text-center space-y-2">
                     <span class="text-5xl">🎂</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Berapa Usia Peserta?</h2>
-                    <p class="text-slate-500 text-sm">Pilih kategori usia agar soal disesuaikan dengan tingkat pemahaman.</p>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Sesuaikan Level Test</h2>
+                    <p class="text-slate-500 text-sm">Pilih kategori test yang sesuai diri anda.</p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mx-auto">
-                    <!-- Kids -->
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-5 max-w-2xl mx-auto">
+                    <!-- Kids 
                     <button type="button" onclick="selectCategory('kids')" class="group p-6 rounded-3xl border-2 border-b-[6px] border-cyan-200 hover:border-et-cyan bg-white hover:bg-cyan-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
                         <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🐣</span>
                         <div>
@@ -39,16 +39,16 @@
                             <span class="text-xs font-bold text-slate-500">Usia 4 - 8 Tahun</span>
                         </div>
                         <span class="mt-2 text-[11px] font-black text-cyan-600 uppercase">Phonics & Fun Play &rarr;</span>
-                    </button>
+                    </button> -->
 
                     <!-- Teens -->
-                    <button type="button" onclick="selectCategory('teens')" class="group p-6 rounded-3xl border-2 border-b-[6px] border-pink-200 hover:border-et-pink bg-white hover:bg-pink-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
+                    <button type="button" onclick="selectCategory('young')" class="group p-6 rounded-3xl border-2 border-b-[6px] border-pink-200 hover:border-et-pink bg-white hover:bg-pink-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
                         <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🧒</span>
                         <div>
-                            <span class="block font-black text-xl text-slate-900 group-hover:text-et-pink">Junior & Teens</span>
+                            <span class="block font-black text-xl text-slate-900 group-hover:text-et-pink">Young Learners</span>
                             <span class="text-xs font-bold text-slate-500">Usia 9 - 15 Tahun</span>
                         </div>
-                        <span class="mt-2 text-[11px] font-black text-pink-600 uppercase">Confidence & Exam &rarr;</span>
+                        <!-- <span class="mt-2 text-[11px] font-black text-pink-600 uppercase">Confidence & Exam &rarr;</span> -->
                     </button>
 
                     <!-- Adults -->
@@ -58,45 +58,72 @@
                             <span class="block font-black text-xl text-slate-900 group-hover:text-indigo-600">Adults</span>
                             <span class="text-xs font-bold text-slate-500">16+ & Mahasiswa/Umum</span>
                         </div>
-                        <span class="mt-2 text-[11px] font-black text-indigo-600 uppercase">Fluency & Career &rarr;</span>
+                        <!-- <span class="mt-2 text-[11px] font-black text-indigo-600 uppercase">Fluency & Career &rarr;</span> -->
+                    </button>
+                
+
+                    <!-- Benchmark Test -->
+                    <button type="button" class="group p-6 rounded-3xl border-2 border-b-[6px] border-indigo-200 hover:border-indigo-500 bg-white hover:bg-indigo-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
+                        <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🧑</span>
+                        <div>
+                            <span class="block font-black text-xl text-slate-900 group-hover:text-indigo-600">Benchmark Test</span>
+                            <span class="text-xs font-bold text-slate-500">Belum Tersedia</span>
+                        </div>
+                        <!-- <span class="mt-2 text-[11px] font-black text-indigo-600 uppercase">Fluency & Career &rarr;</span> -->
+                    </button>
+                
+
+                    <!-- Versant Test -->
+                    <button type="button" class="group p-6 rounded-3xl border-2 border-b-[6px] border-indigo-200 hover:border-indigo-500 bg-white hover:bg-indigo-50/40 transition-all text-center flex flex-col items-center justify-between min-h-[180px] active:translate-y-1 active:border-b-2">
+                        <span class="text-6xl mb-2 group-hover:scale-110 transition-transform">🧑</span>
+                        <div>
+                            <span class="block font-black text-xl text-slate-900 group-hover:text-indigo-600">Versant Test</span>
+                            <span class="text-xs font-bold text-slate-500">Belum Tersedia</span>
+                        </div>
+                        <!-- <span class="mt-2 text-[11px] font-black text-indigo-600 uppercase">Fluency & Career &rarr;</span> -->
                     </button>
                 </div>
 
                 <div class="text-center pt-2">
-                    <span class="text-xs text-slate-400">✨ 100% Bebas Biaya • Hasil Langsung Keluar Otomatis</span>
+                    <span class="text-xs text-slate-400">✨ Pastikan kemampuan anda</span>
                 </div>
             </div>
 
             <!-- STEP 2: FORM IDENTITAS PESERTA -->
             <div id="stepIdentity" class="hidden space-y-6 max-w-lg mx-auto">
                 <button type="button" onclick="backToStepCategory()" class="text-xs font-bold text-slate-500 hover:text-et-cyan flex items-center gap-1 mb-2">
-                    &larr; Ganti Kategori Usia
+                    &larr; Ganti Kategori
                 </button>
 
                 <div class="text-center space-y-2">
                     <span class="text-4xl" id="identityEmoji">🐣</span>
-                    <h2 class="text-2xl font-black text-slate-900">Placement Test Identitas</h2>
-                    <p class="text-xs text-slate-500">Lengkapi data berikut sebelum memulai tes kemampuan bahasa Inggris.</p>
+                    <h2 class="text-2xl font-black text-slate-900">Identitas</h2>
+                    <p class="text-xs text-slate-500">Lengkapi data berikut sebelum memulai tes kemampuan bahasa inggris.</p>
                 </div>
 
                 <form id="identityForm" onsubmit="startQuiz(event)" class="space-y-4">
                     <div>
-                        <label for="quiz_name" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Nama *</label>
-                        <input type="text" id="quiz_name" required placeholder="Contoh: Sarah / Kenzo" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                        <label for="quiz_name" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Nama</label>
+                        <input type="text" id="quiz_name" name="quiz_name" required autocomplete="name" placeholder="Masukan nama panjang" oninput="sanitizeNameInput(this)" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
                     </div>
 
                     <div>
-                        <label for="quiz_whatsapp" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">No Wa *</label>
-                        <input type="tel" id="quiz_whatsapp" required placeholder="Contoh: 081234567890" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                        <label for="quiz_age" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Umur</label>
+                        <input type="text" id="quiz_age" name="quiz_age" required inputmode="numeric" maxlength="3" placeholder="Masukan umur" oninput="sanitizeDigitsInput(this)" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
+                    </div>
+
+                    <div>
+                        <label for="quiz_whatsapp" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">No Whatsapp</label>
+                        <input type="tel" id="quiz_whatsapp" name="quiz_whatsapp" required inputmode="numeric" maxlength="15" placeholder="081234567890" oninput="sanitizeDigitsInput(this)" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold">
                         <span class="text-[11px] text-slate-400 mt-1 block">Untuk mengirimkan hasil asesmen & rekomendasi kelas.</span>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1.5">Bimbel? *</label>
+                        <label class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1.5">Apakah anda pernah mengikuti bimbel</label>
                         <div class="grid grid-cols-2 gap-3">
                             <label class="flex items-center gap-2 p-3 rounded-2xl border-2 border-slate-200 cursor-pointer hover:border-et-cyan transition-all has-[:checked]:border-et-cyan has-[:checked]:bg-cyan-50/50">
                                 <input type="radio" name="quiz_has_bimbel" value="Sudah" onchange="handleBimbelChange(this.value)" class="text-et-cyan focus:ring-et-cyan">
-                                <span class="text-sm font-bold text-slate-700">Sudah / Pernah</span>
+                                <span class="text-sm font-bold text-slate-700">Pernah</span>
                             </label>
                             <label class="flex items-center gap-2 p-3 rounded-2xl border-2 border-slate-200 cursor-pointer hover:border-et-cyan transition-all has-[:checked]:border-et-cyan has-[:checked]:bg-cyan-50/50">
                                 <input type="radio" name="quiz_has_bimbel" value="Belum" checked onchange="handleBimbelChange(this.value)" class="text-et-cyan focus:ring-et-cyan">
@@ -106,18 +133,37 @@
                     </div>
 
                     <div id="containerBimbelDuration" class="hidden space-y-1">
-                        <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">If sudah berapa lama? *</label>
-                        <select id="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
-                            <option value="" disabled selected>-- Pilih Durasi Bimbel Sebelumnya --</option>
+                        <label for="quiz_bimbel_type" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Apa Bimbel Yang Pernah Anda Ikuti</label>
+                        <select id="quiz_bimbel_type" name="quiz_bimbel_type" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
+                            <option value="" disabled selected>-- Pilih Bimbel --</option>
+                            <option value="English for Kids">English for Kids</option>
+                            <option value="English for Teens (Junior High & High School)">English for Teens (Junior High & High School)</option>
+                            <option value="Speaking Booster & General English">Speaking Booster & General English</option>
+                            <option value="VIP Private Class 1-on-1">VIP Private Class 1-on-1</option>
+                            <option value="TOEFL & IELTS Fast-Track Trick">TOEFL & IELTS Fast-Track Trick</option>
+                            <option value="English Trick Intensive Camp">English Trick Intensive Camp</option>
+                        </select>
+
+                        <label for="quiz_bimbel_duration" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Berapa Lama Anda Kursus</label>
+                        <select id="quiz_bimbel_duration" name="quiz_bimbel_duration" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
+                            <option value="" disabled selected>-- Pilih Durasi --</option>
                             <option value="Kurang dari 6 bulan">&lt; 6 Bulan</option>
                             <option value="6 - 12 bulan">6 - 12 Bulan</option>
                             <option value="1 - 2 tahun">1 - 2 Tahun</option>
                             <option value="Lebih dari 2 tahun">&gt; 2 Tahun</option>
                         </select>
+
+                        <label for="quiz_bimbel_branch" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Dicabang Mana Anda Pernah Mengikuti Bimbel</label>
+                        <select id="quiz_bimbel_branch" name="quiz_bimbel_branch" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
+                            <option value="" disabled selected>-- Pilih Cabang --</option>
+                            <option value="Karangbong">Karangbong</option>
+                            <option value="Damarsi">Damarsi</option>
+                            <option value="Taman Pondok Jati">Taman Pondok Jati</option>
+                        </select>
                     </div>
 
                     <div>
-                        <label for="quiz_branch" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Pilih cabang terdekat *</label>
+                        <label for="quiz_branch" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-1">Rencana Kursus Di Cabang Mana</label>
                         <select id="quiz_branch" required class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-et-cyan focus:outline-none text-sm font-semibold bg-white">
                             <option value="" disabled selected>-- Pilih Cabang Terdekat --</option>
                             <option value="Damarsi (Buduran)">📍 Damarsi (Buduran, Sidoarjo)</option>
@@ -127,65 +173,100 @@
                     </div>
 
                     <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-et-cyan to-teal-500 text-white font-black text-base shadow-lg shadow-cyan-500/25 hover:opacity-95 transition-all mt-2">
-                        Mulai Mengerjakan Soal (6 Soal) &rarr;
+                        Mulai Mengerjakan Soal
                     </button>
                 </form>
             </div>
 
+            
             <!-- STEP 3: QUESTIONS SCREEN -->
-            <div id="stepQuestions" class="hidden space-y-6">
-                
-                <!-- Progress bar & counter -->
-                <div>
-                    <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
-                        <span id="questionCounter">Pertanyaan 1 dari 6</span>
-                        <span id="categoryPill" class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-cyan-100 text-et-cyan">Kids Test</span>
-                    </div>
-                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
-                        <div id="progressBar" class="h-full bg-gradient-to-r from-et-cyan to-et-pink rounded-full transition-all duration-300 w-1/6"></div>
-                    </div>
-                </div>
+<div id="stepQuestions" class="hidden space-y-6">
 
-                <!-- Question Card -->
-                <div class="bg-gradient-to-br from-slate-50 to-cyan-50/20 p-6 sm:p-8 rounded-3xl border border-slate-200 text-center space-y-4">
-                    
-                    <span id="cardEmoji" class="text-6xl inline-block animate-bounce">🎯</span>
+    <!-- Progress bar & counter -->
+    <div>
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
+            <span id="questionCounter">Pertanyaan 1 dari 6</span>
+            <span id="categoryPill" class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-cyan-100 text-et-cyan">Kids Test</span>
+        </div>
+        <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+            <div id="progressBar" class="h-full bg-gradient-to-r from-et-cyan to-et-pink rounded-full transition-all duration-300 w-1/6"></div>
+        </div>
+    </div>
 
-                    <h2 id="cardQuestion" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
-                        Loading question...
-                    </h2>
+    <!-- Top Media / Reading Card (YouTube Player OR Reading Passage) -->
+    <div id="topMediaCard" class="bg-gradient-to-br from-slate-50 to-cyan-50/20 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-4">
 
-                    <p id="cardSubText" class="text-xs sm:text-sm text-slate-500 font-medium">
-                        Pilih jawaban yang paling tepat:
-                    </p>
-
-                    <!-- Text-to-Speech Audio Button -->
-                    <div class="pt-2">
-                        <button type="button" id="btnAudioPrompt" onclick="playAudioSpeech()" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-et-cyan text-slate-700 hover:text-et-cyan shadow-sm transition-all text-xs font-bold group">
-                            <span class="text-base group-hover:scale-110 transition-transform">🔊</span>
-                            <span>Dengarkan Pengucapan (Audio)</span>
-                            <div class="sound-wave text-et-cyan hidden" id="audioWave">
-                                <span></span><span></span><span></span><span></span>
-                            </div>
-                        </button>
-                    </div>
-
-                </div>
-
-                <!-- Options Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2" id="optionsContainer">
-                    <!-- Dynamic Options -->
-                </div>
-
-                <!-- Next Button -->
-                <div class="pt-4 flex items-center justify-between">
-                    <span class="text-xs text-slate-400 font-medium">Pilih salah satu jawaban di atas</span>
-                    <button type="button" id="btnNext" onclick="nextQuestion()" disabled class="px-8 py-3.5 rounded-2xl bg-et-pink text-white font-extrabold text-sm shadow-md disabled:opacity-40 disabled:cursor-not-allowed hover:bg-et-pink-hover transition-all">
-                        Lanjut Soal Berikutnya &rarr;
-                    </button>
-                </div>
-
+        <!-- Mode A: YouTube Embed Player (tampil jika question_type === 'youtube') -->
+        <div id="youtubeWrapper" class="hidden">
+            <div class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+                <iframe
+                    id="youtubeFrame"
+                    src=""
+                    title="YouTube video player"
+                    class="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
             </div>
+        </div>
+
+        <!-- audio -->
+        <div id="voicePlayerWrapper" class="hidden flex flex-col items-center justify-center gap-3 py-4">
+            <button
+                type="button"
+                id="btnVoicePlay"
+                onclick="toggleVoiceAudio()"
+                aria-label="Putar atau jeda suara"
+                class="w-16 h-16 rounded-full bg-et-cyan hover:opacity-90 text-white flex items-center justify-center shadow-lg transition-transform active:scale-95">
+                <svg id="iconVoicePlay" class="w-7 h-7 fill-current ml-0.5" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg id="iconVoicePause" class="w-7 h-7 fill-current hidden" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+            </button>
+            <span id="voiceStatusText" class="text-xs font-bold text-slate-600">Klik tombol Play untuk mendengarkan suara</span>
+        </div>
+
+        <!-- Mode B: Story Text di atas (question_type === 'story') -->
+    <div id="storyWrapper" class="hidden text-left">
+        <p id="storyText" class="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed whitespace-pre-line"></p>
+    </div>
+
+        <!-- Mode C: Soal Bacaan / Pertanyaan Biasa (tampil jika question_type === 'reading') -->
+        <div id="readingWrapper" class="hidden text-left space-y-3">
+            <div id="readingPassage" class="hidden p-4 rounded-2xl bg-white border border-slate-200 text-sm text-slate-700 leading-relaxed"></div>
+            <h2 id="topQuestionText" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
+                Loading question...
+            </h2>
+            <p id="topSubText" class="text-xs sm:text-sm text-slate-500 font-medium">
+                Pilih jawaban yang paling tepat:
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Soal Khusus Saat Tipe YouTube (diletakkan tepat di atas pilihan jawaban) -->
+    <div id="aboveOptionsQuestion" class="hidden space-y-1 pt-1">
+        <h2 id="bottomQuestionText" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug"></h2>
+        <p id="bottomSubText" class="text-xs sm:text-sm text-slate-500 font-medium"></p>
+    </div>
+
+    <!-- Options Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1" id="optionsContainer">
+        <!-- Dynamic Options -->
+    </div>
+
+    <!-- Next Button -->
+    <div class="pt-4 flex items-center justify-between">
+        <span class="text-xs text-slate-400 font-medium">Pilih salah satu jawaban di atas</span>
+        <button type="button" id="btnNext" onclick="nextQuestion()" disabled class="px-8 py-3.5 rounded-2xl bg-et-pink text-white font-extrabold text-sm shadow-md disabled:opacity-40 disabled:cursor-not-allowed hover:bg-et-pink-hover transition-all">
+            Lanjut Soal Berikutnya &rarr;
+        </button>
+    </div>
+
+</div>
 
             <!-- STEP 4: PROCESSING / CALCULATING ANIMATION -->
             <div id="stepProcessing" class="hidden py-16 text-center space-y-6">
@@ -208,7 +289,7 @@
                 <div class="bg-gradient-to-r from-cyan-500 via-teal-500 to-et-pink p-8 sm:p-10 rounded-3xl text-white text-center space-y-4 shadow-xl relative overflow-hidden">
                     <span class="text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-white/20">English Trick Level Report</span>
                     <h2 class="text-3xl sm:text-4xl font-black">
-                        Luar Biasa, <span id="resName">Siswa</span>! 🎉
+                        Luar Biasa🎉
                     </h2>
                     <p class="text-sm text-cyan-100 max-w-md mx-auto">
                         Kamu telah menyelesaikan tes penempatan level bahasa Inggris dengan sangat baik.
@@ -226,11 +307,11 @@
                     </div>
                 </div>
 
-                <!-- Placement Test Identitas Summary Card -->
+                <!-- Identitas Summary Card -->
                 <div class="bg-white p-6 rounded-3xl border-2 border-slate-100 shadow-md space-y-4">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                         <h3 class="font-black text-slate-900 text-sm uppercase tracking-wider flex items-center gap-2">
-                            <span>📋</span> Placement Test Identitas
+                            <span>📋</span> Identitas
                         </h3>
                         <span class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-emerald-100 text-emerald-700">Hasil Selesai</span>
                     </div>
@@ -241,23 +322,23 @@
                             <span class="font-extrabold text-slate-800" id="resIdentityName">-</span>
                         </div>
                         <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">No Wa</span>
-                            <span class="font-extrabold text-slate-800" id="resIdentityWhatsapp">-</span>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Umur</span>
+                            <span class="font-extrabold text-slate-800" id="resIdentityAge">-</span>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
+                        <!-- <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
                             <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Bimbel?</span>
                             <span class="font-extrabold text-slate-800" id="resIdentityBimbel">-</span>
                         </div>
                         <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
                             <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">If sudah berapa lama?</span>
                             <span class="font-extrabold text-slate-800" id="resIdentityDuration">-</span>
-                        </div>
+                        </div> -->
                         <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Pilih cabang terdekat</span>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-0.5">Rencana Kursus</span>
                             <span class="font-extrabold text-slate-800" id="resIdentityBranch">-</span>
                         </div>
                         <div class="p-3 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200">
-                            <span class="text-[11px] font-black uppercase tracking-wider text-emerald-600 block mb-0.5">Nilai (setelah selesai tes)</span>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-emerald-600 block mb-0.5">Skor</span>
                             <span class="font-black text-emerald-700 text-lg" id="resIdentityScore">-</span>
                         </div>
                     </div>
@@ -267,7 +348,8 @@
                 <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 space-y-4">
                     <h3 class="font-black text-slate-900 text-sm uppercase tracking-wider">Analisis Kemampuanmu:</h3>
                     
-                    <div class="space-y-3">
+                    <!-- UBAH BARIS DI BAWAH INI -->
+                    <div class="space-y-3 blur-sm select-none pointer-events-none">
                         <div>
                             <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
                                 <span>Vocabulary & Kosakata</span>
@@ -300,18 +382,18 @@
                     </div>
                 </div>
 
-                <!-- Recommended Program Card -->
+                <!-- Recommended Program Card 
                 <div class="p-6 rounded-3xl bg-white border-2 border-et-cyan shadow-lg space-y-3">
                     <span class="text-xs font-black uppercase text-et-pink bg-pink-50 px-3 py-1 rounded-full" id="recBadge">Rekomendasi Kelas</span>
                     <h3 class="text-xl font-black text-slate-900" id="recTitle">Program Kursus</h3>
                     <p class="text-sm text-slate-600 leading-relaxed" id="recDesc">Deskripsi rekomendasi program terbaik.</p>
-                </div>
+                </div> -->
 
                 <!-- Action Button to WhatsApp -->
                 <div class="space-y-3 pt-2">
                     <a id="btnClaimWa" href="#" target="_blank" class="w-full py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-base text-center shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 hover:scale-[1.01] transition-all">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        <span>Klaim Hasil & Konsultasi Free Trial via WhatsApp &rarr;</span>
+                        <span>Konsultasikan Program Les Yang Cocok Untukmu</span>
                     </a>
 
                     <div class="flex items-center justify-center gap-4 pt-2">
@@ -324,15 +406,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Review Section with English Tricks -->
-                <div class="border-t border-slate-200 pt-8 space-y-4">
-                    <h3 class="text-lg font-black text-slate-900">Bongkar Trik Jawaban Soal Ini:</h3>
-                    <div id="reviewList" class="space-y-4">
-                        <!-- Review cards generated by JS -->
-                    </div>
-                </div>
-
             </div>
 
         </div>
@@ -343,38 +416,218 @@
 
 @push('scripts')
 <script>
-    // Quiz State
+    // Quiz Stat
     let quizState = {
         category: 'kids',
-        name: '',
+        has_bimbel: 'Belum Pernah', // penanda pilihan "Pernah" atau "Belum Pernah" di form
+        nama: '',
+        umur: '',
         whatsapp: '',
-        has_bimbel: 'Belum',
-        bimbel_duration: '',
-        branch: '',
+        jenis_bimbel: '',
+        lama_kursus: '',
+        cabang: '',
+        rencana_cabang: '',
+        jawaban: '',
+        skor: '',
         questions: [],
         currentIndex: 0,
         answers: {}, // questionId -> selectedIndex
+        voiceAudioPlayer: null,
     };
+
+    function syncIdentityToQuizState() {
+        const getByIdOrPrev = (ids = [], fallbackPrev = '') => {
+            for (const id of ids) {
+                const el = document.getElementById(id);
+                if (el && el.value !== undefined && String(el.value).trim() !== '') {
+                    return String(el.value).trim();
+                }
+            }
+            return String(fallbackPrev || '').trim();
+        };
+
+        const checkedBimbel = document.querySelector(
+            'input[name="quiz_has_bimbel"]:checked, input[name="has_bimbel"]:checked, input[name="pernah_bimbel"]:checked'
+        );
+        const hasBimbelVal = checkedBimbel
+            ? String(checkedBimbel.value).trim()
+            : String(quizState.has_bimbel || 'Belum').trim();
+
+        const isPernah = ['pernah', 'sudah', 'ya', 'yes', 'true', '1'].includes(hasBimbelVal.toLowerCase());
+
+        quizState.has_bimbel = hasBimbelVal;
+        quizState.nama = getByIdOrPrev(['quiz_name', 'inputNama', 'inputName'], quizState.nama);
+        quizState.name = quizState.nama;
+        quizState.umur = getByIdOrPrev(['quiz_age', 'inputUmur', 'inputAge'], quizState.umur);
+        quizState.whatsapp = getByIdOrPrev(['quiz_whatsapp', 'inputWhatsapp', 'inputNoWhatsapp'], quizState.whatsapp);
+        quizState.rencana_cabang = getByIdOrPrev(['quiz_branch', 'inputRencanaCabang', 'inputBranch'], quizState.rencana_cabang);
+        quizState.branch = quizState.rencana_cabang;
+
+        if (isPernah) {
+            quizState.jenis_bimbel = getByIdOrPrev(['quiz_bimbel_type', 'inputJenisBimbel', 'inputBimbel'], quizState.jenis_bimbel);
+            quizState.lama_kursus = getByIdOrPrev(['quiz_bimbel_duration', 'inputLamaKursus', 'inputDuration'], quizState.lama_kursus);
+            quizState.bimbel_duration = quizState.lama_kursus;
+            quizState.cabang = getByIdOrPrev(['quiz_bimbel_branch', 'inputCabang', 'inputPastBranch'], quizState.cabang);
+        } else {
+            quizState.jenis_bimbel = '';
+            quizState.lama_kursus = '';
+            quizState.bimbel_duration = '';
+            quizState.cabang = '';
+        }
+    }
+
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxHA1mt7pvXBsJLZGGMOoofHfOScF-tJm_ZHecBPVfpD8AvX22_Mps84bHSpIIkJh3F/exec';
+    const APPS_SCRIPT_KEY = 'englishtrickaja';
+
+    function formatAnswersUpToFiveOptions(questions = [], answers = {}) {
+    if (!Array.isArray(questions) || !answers) return '';
+
+    return questions
+        .map((q, idx) => {
+            const rawIdx = answers[q.id];
+            const chosenIdx = Number(rawIdx);
+            if (rawIdx === undefined || rawIdx === null || rawIdx === '' || Number.isNaN(chosenIdx) || chosenIdx < 0) {
+                return null;
+            }
+            const maxOpts = Array.isArray(q.options) && q.options.length > 0
+                ? Math.min(q.options.length, 5)
+                : 5;
+            if (chosenIdx >= maxOpts) {
+                return null;
+            }
+            const letter = String.fromCharCode(65 + chosenIdx); // 0..4 -> A..E
+            return `${idx + 1}${letter}`;
+        })
+        .filter(Boolean)
+        .join(',');
+    }
+
+    function getOptionalField(resultData, stateObj, keys = [], fallbackIds = []) {
+        for (const k of keys) {
+            if (resultData && resultData[k] !== undefined && resultData[k] !== null && String(resultData[k]).trim() !== '') {
+                return String(resultData[k]).trim();
+            }
+        }
+        for (const k of keys) {
+            if (stateObj && stateObj[k] !== undefined && stateObj[k] !== null && String(stateObj[k]).trim() !== '') {
+                return String(stateObj[k]).trim();
+            }
+        }
+        for (const id of fallbackIds) {
+            const el = document.getElementById(id);
+            if (el) {
+                if (el.closest('.hidden')) continue;
+                const val = ('value' in el && el.value !== undefined) ? el.value : el.textContent;
+                if (val !== undefined && val !== null && String(val).trim() !== '' && String(val).trim() !== '-') {
+                    return String(val).trim();
+                }
+            }
+        }
+        return '';
+    }
+
+    function buildFormattedScore(resultData = {}) {
+        const score = resultData.score ?? 0;
+        const correct = resultData.correct_answers;
+        const total = resultData.total_questions ?? (Array.isArray(quizState.questions) ? quizState.questions.length : 0);
+
+        if (correct !== undefined && correct !== null && total > 0) {
+            return `${score}% (${correct}/${total} Benar)`;
+        }
+        return `${score}%`;
+    }
+
+    async function postPlacementToAppsScript(resultData = {}) {
+        if (!APPS_SCRIPT_URL) return;
+
+        // Pastikan data identitas terbaru ikut tersinkron
+        syncIdentityToQuizState();
+
+        const isPernah = ['pernah', 'sudah', 'ya', 'yes', 'true', '1'].includes(
+            String(quizState.has_bimbel || '').trim().toLowerCase()
+        );
+
+        quizState.jawaban = formatAnswersUpToFiveOptions(quizState.questions, quizState.answers);
+        quizState.skor = buildFormattedScore(resultData);
+
+        if (!isPernah) {
+            quizState.jenis_bimbel = '';
+            quizState.lama_kursus = '';
+            quizState.cabang = '';
+        }
+
+        const payload = {
+            api_key: APPS_SCRIPT_KEY,
+            nama: String(quizState.nama || '').trim(),
+            umur: String(quizState.umur || '').trim(),
+            whatsapp: String(quizState.whatsapp || '').trim(),
+            jenis_bimbel: String(quizState.jenis_bimbel || '').trim(),
+            lama_kursus: String(quizState.lama_kursus || '').trim(),
+            cabang: String(quizState.cabang || '').trim(),
+            rencana_cabang: String(quizState.rencana_cabang || '').trim(),
+            jawaban: String(quizState.jawaban || '').trim(),
+            skor: String(quizState.skor || '').trim(),
+        };
+
+        try {
+            await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                referrerPolicy: 'no-referrer',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify(payload),
+            });
+        } catch (err) {
+            console.error('Gagal mengirim data ke Google Apps Script:', err);
+        }
+    }
+
+    function stripEmoji(text = '') {
+        return String(text)
+            .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, '')
+            .replace(/\s{2,}/g, ' ')
+            .trim();
+    }
+
+    function extractYouTubeId(urlOrId = '') {
+        if (!urlOrId) return '';
+        const match = String(urlOrId).match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([A-Za-z0-9_-]{11})/);
+        return match ? match[1] : String(urlOrId).trim();
+    }
 
     function handleBimbelChange(val) {
         quizState.has_bimbel = val;
         const container = document.getElementById('containerBimbelDuration');
+        const typeSelect = document.getElementById('quiz_bimbel_type');
         const durationSelect = document.getElementById('quiz_bimbel_duration');
+        const branchSelect = document.getElementById('quiz_bimbel_branch');
+
         if (val === 'Sudah') {
             container.classList.remove('hidden');
-            durationSelect.required = true;
+            if (durationSelect) durationSelect.required = true;
+            if (branchSelect) branchSelect.required = true;
+            if (typeSelect) typeSelect.required = true;
         } else {
             container.classList.add('hidden');
-            durationSelect.required = false;
-            durationSelect.value = '';
+            if (typeSelect) typeSelect.value = '';
+            if (durationSelect) {
+                durationSelect.required = false;
+                durationSelect.value = '';
+            }
+            if (branchSelect) branchSelect.value = '';
+            quizState.jenis_bimbel = '';
+            quizState.lama_kursus = '';
             quizState.bimbel_duration = '';
+            quizState.cabang = '';
         }
     }
 
     // Step 1: Select Category
     function selectCategory(cat) {
         quizState.category = cat;
-        const emojiMap = { 'kids': '🐣', 'teens': '🧒', 'adults': '🧑' };
+        const emojiMap = { 'young': '🐣', 'adult': '🧒', 'bersant': '🧑' };
         document.getElementById('identityEmoji').textContent = emojiMap[cat] || '🎯';
         
         document.getElementById('stepCategory').classList.add('hidden');
@@ -386,10 +639,70 @@
         document.getElementById('stepCategory').classList.remove('hidden');
     }
 
+    function sanitizeNameInput(el) {
+        if (!el) return;
+        const cleaned = el.value
+            .replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s'.-]/g, '')
+            .replace(/\s{2,}/g, ' ');
+        if (el.value !== cleaned) {
+            el.value = cleaned;
+        }
+    }
+
+    function sanitizeDigitsInput(el) {
+        if (!el) return;
+        const cleaned = el.value.replace(/\D+/g, '');
+        if (el.value !== cleaned) {
+            el.value = cleaned;
+        }
+    }
+
+    function validateIdentityFields() {
+        const nameEl = document.getElementById('quiz_name');
+        const ageEl = document.getElementById('quiz_age');
+        const waEl = document.getElementById('quiz_whatsapp');
+
+        const nameVal = (nameEl?.value || '').trim().replace(/\s{2,}/g, ' ');
+        const ageVal = (ageEl?.value || '').replace(/\D+/g, '').trim();
+        const waVal = (waEl?.value || '').replace(/\D+/g, '').trim();
+
+        if (nameEl) nameEl.value = nameVal;
+        if (ageEl) ageEl.value = ageVal;
+        if (waEl) waEl.value = waVal;
+
+        const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'.-]{2,}$/;
+        if (!nameVal || !nameRegex.test(nameVal) || !/[A-Za-zÀ-ÖØ-öø-ÿ]/.test(nameVal)) {
+            alert('Nama harus diisi huruf saja (tidak boleh angka atau simbol).');
+            nameEl?.focus();
+            return false;
+        }
+
+        const ageNum = Number(ageVal);
+        if (!ageVal || !/^\d+$/.test(ageVal) || ageNum < 1 || ageNum > 120) {
+            alert('Umur harus diisi angka yang valid (1 - 120).');
+            ageEl?.focus();
+            return false;
+        }
+
+        if (!waVal || !/^\d{8,15}$/.test(waVal)) {
+            alert('Nomor WhatsApp harus diisi angka saja (8 - 15 digit).');
+            waEl?.focus();
+            return false;
+        }
+
+        return true;
+    }
+
     // Step 2: Start Quiz & Fetch questions
     async function startQuiz(e) {
         e.preventDefault();
+
+        if (!validateIdentityFields()) {
+            return;
+        }
+
         quizState.name = document.getElementById('quiz_name').value.trim();
+        quizState.umur = document.getElementById('quiz_age')?.value.trim();
         quizState.whatsapp = document.getElementById('quiz_whatsapp').value.trim();
 
         const bimbelRadio = document.querySelector('input[name="quiz_has_bimbel"]:checked');
@@ -432,29 +745,178 @@
                 alert('Pertanyaan belum tersedia untuk kategori ini.');
             }
         } catch (err) {
-            alert('Gagal memuat pertanyaan. Silakan coba lagi.');
+            console.error('Detail error saat memuat/merender soal:', err);
+            alert('Gagal memuat pertanyaan: ' + (err.message || err));
         }
     }
 
-    // Step 3: Render Question
+    function stopVoiceAudio() {
+        if (quizState.voiceAudioPlayer) {
+            quizState.voiceAudioPlayer.pause();
+            quizState.voiceAudioPlayer.currentTime = 0;
+            quizState.voiceAudioPlayer = null;
+        }
+        const playIcon = document.getElementById('iconVoicePlay');
+        const pauseIcon = document.getElementById('iconVoicePause');
+        const statusEl = document.getElementById('voiceStatusText');
+        if (playIcon) playIcon.classList.remove('hidden');
+        if (pauseIcon) pauseIcon.classList.add('hidden');
+        if (statusEl) statusEl.textContent = 'Klik tombol Play untuk mendengarkan suara';
+    }
+
+    function setupVoiceQuestion(audioSrc) {
+        stopVoiceAudio();
+        const wrapper = document.getElementById('voicePlayerWrapper');
+        const statusEl = document.getElementById('voiceStatusText');
+
+        if (!audioSrc) {
+            if (wrapper) wrapper.classList.add('hidden');
+            return;
+        }
+
+        if (wrapper) wrapper.classList.remove('hidden');
+
+        quizState.voiceAudioPlayer = new Audio(audioSrc);
+        quizState.voiceAudioPlayer.addEventListener('ended', () => {
+            const playIcon = document.getElementById('iconVoicePlay');
+            const pauseIcon = document.getElementById('iconVoicePause');
+            if (playIcon) playIcon.classList.remove('hidden');
+            if (pauseIcon) pauseIcon.classList.add('hidden');
+            if (statusEl) statusEl.textContent = 'Suara selesai diputar — klik untuk memutar ulang';
+        });
+        quizState.voiceAudioPlayer.addEventListener('error', () => {
+            if (statusEl) statusEl.textContent = 'File audio MP3 gagal dimuat.';
+        });
+    }
+
+    function toggleVoiceAudio() {
+        const statusEl = document.getElementById('voiceStatusText');
+        const playIcon = document.getElementById('iconVoicePlay');
+        const pauseIcon = document.getElementById('iconVoicePause');
+
+        if (!quizState.voiceAudioPlayer) return;
+
+        if (quizState.voiceAudioPlayer.paused) {
+            quizState.voiceAudioPlayer.play().then(() => {
+                if (playIcon) playIcon.classList.add('hidden');
+                if (pauseIcon) pauseIcon.classList.remove('hidden');
+                if (statusEl) statusEl.textContent = 'Sedang memutar suara...';
+            }).catch(() => {
+                if (statusEl) statusEl.textContent = 'Gagal memutar suara. Periksa path file MP3.';
+            });
+        } else {
+            quizState.voiceAudioPlayer.pause();
+            if (playIcon) playIcon.classList.remove('hidden');
+            if (pauseIcon) pauseIcon.classList.add('hidden');
+            if (statusEl) statusEl.textContent = 'Dijeda — klik untuk melanjutkan';
+        }
+    }
+
+    // Step 3: Render Question (YouTube vs Reading/Pertanyaan Biasa, tanpa emoji)
     function renderCurrentQuestion() {
         const q = quizState.questions[quizState.currentIndex];
-        const total = quizState.questions.length;
-        const currentNum = quizState.currentIndex + 1;
+    if (!q) return;
 
-        document.getElementById('questionCounter').textContent = `Pertanyaan ${currentNum} dari ${total}`;
-        document.getElementById('progressBar').style.width = `${(currentNum / total) * 100}%`;
-        
-        const catLabels = { 'kids': 'Kids Test (4-8 Thn)', 'teens': 'Teens Test (9-15 Thn)', 'adults': 'Adults Test (16+ Thn)' };
-        document.getElementById('categoryPill').textContent = catLabels[quizState.category] || 'Level Test';
+    const total = quizState.questions.length;
+    const currentNum = quizState.currentIndex + 1;
 
-        document.getElementById('cardEmoji').textContent = q.emoji || '🎯';
-        document.getElementById('cardQuestion').textContent = q.question;
-        document.getElementById('cardSubText').textContent = q.sub_text || 'Pilih jawaban yang paling tepat:';
+    document.getElementById('questionCounter').textContent = `Pertanyaan ${currentNum} dari ${total}`;
+    document.getElementById('progressBar').style.width = `${(currentNum / total) * 100}%`;
+
+    const catLabels = {
+        'kids': 'Kids Test (4-8 Thn)',
+        'teens': 'Teens Test (9-15 Thn)',
+        'adults': 'Adults Test (16+ Thn)'
+    };
+    document.getElementById('categoryPill').textContent = catLabels[quizState.category] || 'Level Test';
+        const cleanQuestion = stripEmoji(q.question || '');
+        const cleanSubText = stripEmoji(q.sub_text || 'Pilih jawaban yang paling tepat:');
+        const cleanReading = stripEmoji(q.reading_text || '');
+        const cleanStory = stripEmoji(q.story_text || '');
+        const normalizedType = String(q.question_type || '').trim().toLowerCase();
+
+        const isYouTube = normalizedType === 'youtube' || (!normalizedType && Boolean(q.youtube_url || q.youtube_id));
+        const isStory = normalizedType === 'story';
+        const isVoice = normalizedType === 'voice' || (!normalizedType && Boolean(q.audio_url));
+
+        const youtubeWrapper = document.getElementById('youtubeWrapper');
+        const youtubeFrame = document.getElementById('youtubeFrame');
+        const storyWrapper = document.getElementById('storyWrapper');
+        const storyText = document.getElementById('storyText');
+        const readingWrapper = document.getElementById('readingWrapper');
+        const readingPassage = document.getElementById('readingPassage');
+        const topQuestionText = document.getElementById('topQuestionText');
+        const topSubText = document.getElementById('topSubText');
+        const aboveOptionsQuestion = document.getElementById('aboveOptionsQuestion');
+        const bottomQuestionText = document.getElementById('bottomQuestionText');
+        const bottomSubText = document.getElementById('bottomSubText');
+        const voicePlayerWrapper = document.getElementById('voicePlayerWrapper');
+
+        // Reset semua mode sebelum merender soal aktif
+        if (youtubeFrame) youtubeFrame.src = '';
+        stopVoiceAudio();
+        if (youtubeWrapper) youtubeWrapper.classList.add('hidden');
+        if (storyWrapper) storyWrapper.classList.add('hidden');
+        if (storyText) storyText.textContent = '';
+        if (readingWrapper) readingWrapper.classList.add('hidden');
+        if (readingPassage) {
+            readingPassage.classList.add('hidden');
+            readingPassage.textContent = '';
+        }
+        if (aboveOptionsQuestion) aboveOptionsQuestion.classList.add('hidden');
+
+        if (isVoice) {
+         setupVoiceQuestion(q.audio_url);
+            if (bottomQuestionText) bottomQuestionText.textContent = cleanQuestion;
+            if (bottomSubText) bottomSubText.textContent = cleanSubText;
+            if (aboveOptionsQuestion) aboveOptionsQuestion.classList.remove('hidden');
+        } else if (isYouTube) {
+            const videoId = extractYouTubeId(q.youtube_url || q.youtube_id);
+            if (videoId && youtubeFrame && youtubeWrapper) {
+                youtubeFrame.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+                youtubeWrapper.classList.remove('hidden');
+            }
+            if (bottomQuestionText) bottomQuestionText.textContent = cleanQuestion;
+            if (bottomSubText) bottomSubText.textContent = cleanSubText;
+            if (aboveOptionsQuestion) aboveOptionsQuestion.classList.remove('hidden');
+        } else if (isStory) {
+            if (storyText) storyText.textContent = cleanStory;
+            if (storyWrapper) storyWrapper.classList.remove('hidden');
+
+            if (bottomQuestionText) bottomQuestionText.textContent = cleanQuestion;
+            if (bottomSubText) bottomSubText.textContent = cleanSubText;
+            if (aboveOptionsQuestion) aboveOptionsQuestion.classList.remove('hidden');
+        } else {
+            if (cleanReading && readingPassage) {
+                readingPassage.textContent = cleanReading;
+                readingPassage.classList.remove('hidden');
+            }
+            if (topQuestionText) topQuestionText.textContent = cleanQuestion;
+            if (topSubText) topSubText.textContent = cleanSubText;
+            if (readingWrapper) readingWrapper.classList.remove('hidden');
+        }
 
         // Render options
         const container = document.getElementById('optionsContainer');
         container.innerHTML = '';
+
+        let optionImages = [];
+        if (Array.isArray(q.option_images)) {
+            optionImages = q.option_images;
+        } else if (typeof q.option_images === 'string' && q.option_images.trim() !== '') {
+            try {
+                const parsed = JSON.parse(q.option_images);
+                if (Array.isArray(parsed)) optionImages = parsed;
+            } catch (e) {
+                optionImages = [];
+            }
+        }
+
+        const hasImageOptions = optionImages.some((img) => typeof img === 'string' && img.trim() !== '');
+
+        container.className = hasImageOptions
+            ? 'grid grid-cols-1 sm:grid-cols-2 gap-3'
+            : 'grid grid-cols-1 gap-3';
 
         const previouslySelected = quizState.answers[q.id];
 
@@ -462,17 +924,42 @@
             const isSelected = (previouslySelected !== undefined && previouslySelected === idx);
             const btn = document.createElement('button');
             btn.type = 'button';
-            btn.className = `option-btn p-4 rounded-2xl border-2 text-left font-bold text-sm transition-all flex items-center gap-3 ${
-                isSelected 
-                    ? 'border-et-cyan bg-cyan-50 text-et-cyan shadow-sm' 
+            const letter = String.fromCharCode(65 + idx); // A, B, C, D
+            const rawImg = typeof optionImages[idx] === 'string' ? optionImages[idx].trim() : '';
+            const isImageOption = rawImg !== '';
+
+            btn.className = `option-btn p-4 rounded-2xl border-2 text-left font-bold text-sm transition-all flex ${
+                isImageOption ? 'flex-col items-start gap-3' : 'items-center gap-3'
+            } ${
+                isSelected
+                    ? 'border-et-cyan bg-cyan-50 text-et-cyan shadow-sm'
                     : 'border-slate-200 bg-white hover:border-slate-300 text-slate-700'
             }`;
-            
-            const letter = String.fromCharCode(65 + idx); // A, B, C, D
-            btn.innerHTML = `
-                <span class="w-8 h-8 rounded-xl ${isSelected ? 'bg-et-cyan text-white' : 'bg-slate-100 text-slate-600'} flex items-center justify-center font-black text-xs shrink-0">${letter}</span>
-                <span class="leading-snug">${opt}</span>
-            `;
+
+            const badge = document.createElement('span');
+            badge.className = `w-8 h-8 rounded-xl ${
+                isSelected ? 'bg-et-cyan text-white' : 'bg-slate-100 text-slate-600'
+            } flex items-center justify-center font-black text-xs shrink-0`;
+            badge.textContent = letter;
+
+            if (isImageOption) {
+                // Hanya badge huruf (A, B, C) + gambar tanpa teks deskripsi
+                btn.appendChild(badge);
+
+                const img = document.createElement('img');
+                img.src = rawImg;
+                img.alt = `Pilihan ${letter}`;
+                img.loading = 'lazy';
+                img.className = 'w-full max-h-48 object-contain rounded-xl bg-slate-50';
+                img.onerror = () => img.remove();
+                btn.appendChild(img);
+            } else {
+                // Mode opsi teks biasa (seperti semula)
+                btn.innerHTML = `
+                    <span class="w-8 h-8 rounded-xl ${isSelected ? 'bg-et-cyan text-white' : 'bg-slate-100 text-slate-600'} flex items-center justify-center font-black text-xs shrink-0">${letter}</span>
+                    <span class="leading-snug">${stripEmoji(opt)}</span>
+                `;
+            }
 
             btn.onclick = () => selectOption(q.id, idx);
             container.appendChild(btn);
@@ -480,7 +967,7 @@
 
         const btnNext = document.getElementById('btnNext');
         btnNext.disabled = (previouslySelected === undefined);
-        btnNext.textContent = (currentNum === total) ? 'Selesai & Lihat Hasil 🎉' : 'Lanjut Soal Berikutnya →';
+        btnNext.textContent = (currentNum === total) ? 'Selesai & Lihat Hasil' : 'Lanjut Soal Berikutnya →';
     }
 
     function selectOption(questionId, optionIndex) {
@@ -489,6 +976,12 @@
     }
 
     function nextQuestion() {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+        const wave = document.getElementById('audioWave');
+        if (wave) wave.classList.add('hidden');
+
         if (quizState.currentIndex < quizState.questions.length - 1) {
             quizState.currentIndex++;
             renderCurrentQuestion();
@@ -497,16 +990,15 @@
         }
     }
 
-    // Audio Speech Synthesis
+    // Audio Speech Synthesis (tetap dipertahankan jika masih dipakai soal non-YouTube)
     function playAudioSpeech() {
-        const q = quizState.questions[quizState.currentIndex];
         const speechText = q.speech_text || q.question;
 
         if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel(); // stop current
-            const utterance = new SpeechSynthesisUtterance(speechText);
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(stripEmoji(speechText));
             utterance.lang = 'en-US';
-            utterance.rate = (quizState.category === 'kids') ? 0.85 : 0.95; // kids slightly slower
+            utterance.rate = (quizState.category === 'kids') ? 0.85 : 0.95;
 
             const wave = document.getElementById('audioWave');
             if (wave) wave.classList.remove('hidden');
@@ -525,11 +1017,18 @@
     }
 
     // Step 4: Submit and display animated results
+    // Step 4: Submit and display animated results
     async function finishQuiz() {
+        stopVoiceAudio()
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+        const youtubeFrame = document.getElementById('youtubeFrame');
+        if (youtubeFrame) youtubeFrame.src = '';
+
         document.getElementById('stepQuestions').classList.add('hidden');
         document.getElementById('stepProcessing').classList.remove('hidden');
 
-        // Playful stages
         const stages = [
             'Mengumpulkan jawaban kamu...',
             'Menganalisis kemampuan Speaking & Kosakata...',
@@ -545,6 +1044,8 @@
             }
         }, 600);
 
+        syncIdentityToQuizState();
+
         try {
             const res = await fetch('/quiz/submit', {
                 method: 'POST',
@@ -554,11 +1055,16 @@
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    name: quizState.name,
-                    whatsapp: quizState.whatsapp,
-                    has_bimbel: quizState.has_bimbel,
-                    bimbel_duration: quizState.bimbel_duration,
-                    branch: quizState.branch,
+                    name: quizState.nama || quizState.name || '',
+                    umur: quizState.umur || '',
+                    whatsapp: quizState.whatsapp || '',
+                    has_bimbel: quizState.has_bimbel || 'Belum Pernah',
+                    jenis_bimbel: quizState.jenis_bimbel || '',
+                    bimbel_duration: quizState.lama_kursus || quizState.bimbel_duration || '',
+                    lama_kursus: quizState.lama_kursus || '',
+                    cabang: quizState.cabang || '',
+                    branch: quizState.rencana_cabang || quizState.branch || '',
+                    rencana_cabang: quizState.rencana_cabang || '',
                     category: quizState.category,
                     answers: quizState.answers,
                 })
@@ -570,6 +1076,8 @@
             if (data.status === 'success') {
                 setTimeout(() => {
                     displayResults(data);
+                    syncIdentityToQuizState();
+                    postPlacementToAppsScript(data);
                 }, 800);
             } else {
                 alert(data.message || 'Gagal mengirim hasil. Silakan coba lagi.');
@@ -585,82 +1093,72 @@
     }
 
     // Step 5: Display Results
-    function displayResults(data) {
-        document.getElementById('stepProcessing').classList.add('hidden');
-        document.getElementById('stepResults').classList.remove('hidden');
+    function displayResults(rawData) {
+        const data = (rawData && (rawData.data || rawData.result)) ? (rawData.data || rawData.result) : (rawData || {});
 
-        document.getElementById('resName').textContent = data.name;
-        document.getElementById('resScore').textContent = `${data.score}%`;
-        document.getElementById('resCefr').textContent = data.cefr_level;
+        const setText = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = value;
+        };
 
-        // Populate Placement Test Identitas Summary
-        document.getElementById('resIdentityName').textContent = data.name || quizState.name;
-        document.getElementById('resIdentityWhatsapp').textContent = data.whatsapp || quizState.whatsapp;
-        document.getElementById('resIdentityBimbel').textContent = data.has_bimbel || quizState.has_bimbel;
-        document.getElementById('resIdentityDuration').textContent = (data.has_bimbel === 'Sudah' ? (data.bimbel_duration || quizState.bimbel_duration) : '-');
-        document.getElementById('resIdentityBranch').textContent = data.branch || quizState.branch;
-        document.getElementById('resIdentityScore').textContent = `${data.score}% (${data.correct_answers || 0}/${data.total_questions || 6} Benar)`;
+        const setWidth = (id, pct) => {
+            const el = document.getElementById(id);
+            if (el) el.style.width = `${pct}%`;
+        };
 
-        // Skill Breakdown
+        const stepProcessing = document.getElementById('stepProcessing');
+        const stepResults = document.getElementById('stepResults');
+        if (stepProcessing) stepProcessing.classList.add('hidden');
+        if (stepResults) stepResults.classList.remove('hidden');
+
+        const scoreVal = data.score ?? 0;
+        const correctCount = data.correct_answers ?? 0;
+        const totalCount = data.total_questions ?? (Array.isArray(quizState.questions) ? quizState.questions.length : 0);
+
+        setText('resName', data.name || quizState.name || '-');
+        setText('resScore', `${scoreVal}%`);
+        setText('resCefr', data.cefr_level || '-');
+
+        setText('resIdentityName', data.name || quizState.name || '-');
+        setText('resIdentityAge', data.umur || data.age || quizState.umur || quizState.age || '-');
+        setText('resIdentityWhatsapp', data.whatsapp || quizState.whatsapp || '-');
+        setText('resIdentityBimbel', data.has_bimbel || quizState.has_bimbel || '-');
+        setText('resIdentityDuration', (data.has_bimbel === 'Sudah' ? (data.bimbel_duration || quizState.bimbel_duration || '-') : '-'));
+        setText('resIdentityBranch', data.branch || quizState.branch || '-');
+        setText('resIdentityScore', `${scoreVal}% (${correctCount}/${totalCount} Benar)`);
+
         const sb = data.skill_breakdown || {};
-        const vocab = sb.vocabulary || 80;
-        const grammar = sb.grammar || 75;
-        const speaking = sb.speaking || 85;
+        const vocab = sb.vocabulary ?? 80;
+        const grammar = sb.grammar ?? 75;
+        const speaking = sb.speaking ?? 85;
 
-        document.getElementById('resVocab').textContent = `${vocab}%`;
-        document.getElementById('barVocab').style.width = `${vocab}%`;
+        setText('resVocab', `${vocab}%`);
+        setWidth('barVocab', vocab);
 
-        document.getElementById('resGrammar').textContent = `${grammar}%`;
-        document.getElementById('barGrammar').style.width = `${grammar}%`;
+        setText('resGrammar', `${grammar}%`);
+        setWidth('barGrammar', grammar);
 
-        document.getElementById('resSpeaking').textContent = `${speaking}%`;
-        document.getElementById('barSpeaking').style.width = `${speaking}%`;
+        setText('resSpeaking', `${speaking}%`);
+        setWidth('barSpeaking', speaking);
 
-        // Recommended Program
         if (data.recommended_program) {
-            document.getElementById('recBadge').textContent = data.recommended_program.badge || 'Rekomendasi Kelas';
-            document.getElementById('recTitle').textContent = data.recommended_program.title;
-            document.getElementById('recDesc').textContent = data.recommended_program.description;
+            setText('recBadge', data.recommended_program.badge || 'Rekomendasi Kelas');
+            setText('recTitle', data.recommended_program.title || '');
+            setText('recDesc', data.recommended_program.description || '');
         }
 
-        // WhatsApp CTA
-        if (data.whatsapp_url) {
-            document.getElementById('btnClaimWa').href = data.whatsapp_url;
+        const btnClaimWa = document.getElementById('btnClaimWa');
+        if (btnClaimWa && data.whatsapp_url) {
+            btnClaimWa.href = data.whatsapp_url;
         }
 
-        // Review Items with Trick Tips
         const reviewList = document.getElementById('reviewList');
-        reviewList.innerHTML = '';
-
-        if (data.review_items) {
-            data.review_items.forEach((item, i) => {
-                const card = document.createElement('div');
-                card.className = `p-4 rounded-2xl border ${item.is_correct ? 'border-emerald-200 bg-emerald-50/40' : 'border-red-200 bg-red-50/40'} space-y-2`;
-                
-                const userText = item.user_choice !== null ? item.options[item.user_choice] : '-';
-                const correctText = item.options[item.correct_index];
-
-                card.innerHTML = `
-                    <div class="flex items-start justify-between gap-3">
-                        <div class="flex items-center gap-2 font-black text-sm text-slate-800">
-                            <span>${item.is_correct ? '✅' : '❌'}</span>
-                            <span>Soal #${i + 1}: ${item.question}</span>
-                        </div>
-                        <span class="text-[11px] font-bold px-2 py-0.5 rounded-full ${item.is_correct ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">
-                            ${item.is_correct ? 'Benar' : 'Perlu Diperbaiki'}
-                        </span>
-                    </div>
-                    <div class="text-xs text-slate-600 space-y-1 pl-6">
-                        <p>Jawaban Kamu: <strong>${userText}</strong></p>
-                        ${!item.is_correct ? `<p class="text-emerald-700 font-bold">Jawaban Tepat: ${correctText}</p>` : ''}
-                    </div>
-                    ${item.trick_tip ? `
-                    <div class="mt-2 p-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 pl-3">
-                        <span class="font-black text-et-pink">💡 English Trick:</span> ${item.trick_tip}
-                    </div>` : ''}
-                `;
-                reviewList.appendChild(card);
-            });
+        if (reviewList) {
+            reviewList.innerHTML = '';
+            const reviewSection = reviewList.closest('section, div[id*="review"], .review-section');
+            if (reviewSection && reviewSection !== reviewList) {
+                reviewSection.classList.add('hidden');
+            }
         }
     }
 </script>

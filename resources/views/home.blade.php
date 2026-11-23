@@ -12,11 +12,11 @@
             <!-- Left Hero Text -->
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-child reveal-delay-1">
                 
-                <!-- Badge Pill -->
+                <!-- Badge Pill 
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100/80 border border-cyan-300 text-et-cyan-dark text-xs sm:text-sm font-extrabold shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-et-pink animate-ping"></span>
                     <span>Lembaga Kursus Bahasa Inggris #1 di Damarsi Sidoarjo</span>
-                </div>
+                </div> -->
 
                 <!-- Main Slogan & Headline -->
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="h-6 w-px bg-slate-300 hidden sm:block"></div>
                     <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 rounded-full border-2 border-blue-400 text-blue-600 flex items-center justify-center text-xs font-black">★</div>
+                        <img src="{{ asset('images/logo-cefr.jpg') }}" alt="CEFR Logo" class="h-8 w-auto object-contain">
                         <div class="text-left">
                             <span class="text-xs font-black tracking-tight text-slate-900 block leading-tight">CEFR</span>
                             <span class="text-[8px] text-slate-500 font-bold uppercase tracking-wider block">Common European Framework</span>
@@ -136,12 +136,12 @@
                             <img src="{{ asset('images/logo.png') }}" alt="Logo English Trick" class="w-12 h-12 rounded-xl object-contain shadow-sm border border-slate-100 p-1">
                             <div>
                                 <h3 class="font-extrabold text-slate-900 text-sm">English Trick Assessment</h3>
-                                <p class="text-xs text-slate-500">Placement Test Demo</p>
+                                <p class="text-xs text-slate-500">Placement Test</p>
                             </div>
                         </div>
-                        <span class="px-2.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-700">
+                        <!-- <span class="px-2.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-700">
                             Live Result
-                        </span>
+                        </span> -->
                     </div>
 
                     <!-- Level Badge Display -->
@@ -404,10 +404,10 @@
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span class="text-xs font-black uppercase tracking-widest text-et-cyan bg-cyan-100 px-3 py-1 rounded-full">Program Pilihan</span>
             <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                Pilih Program Sesuai Usia & Kebutuhan Kamu
+                Program Lengkap
             </h2>
             <p class="text-slate-600 text-base sm:text-lg">
-                Mulai dari anak usia dini hingga profesional, setiap program dirancang dengan kurikulum bertahap dan materi interaktif.
+                Dimulai dari anak usia 3 tahun - 18 tahun, remaja, mahasiswa hingga dewasa
             </p>
         </div>
 
@@ -455,7 +455,10 @@
 
                 <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
                     <div>
-                        @if($prog->price_starting === 'On Going')
+                        @if($prog->price_starting === 'Menyesuaikan Kebutuhan')
+                        <span class="text-lg font-black text-et-pink">Hubungi kami</span>
+                        
+                        @elseif($prog->price_starting === 'On Going')
                         <span class="text-lg font-black text-et-pink">On Going</span>
                         <span class="text-[11px] text-slate-500 block font-semibold">Akan Segera Dibuka</span>
                         @else
@@ -496,10 +499,10 @@
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span class="text-xs font-black uppercase tracking-widest text-et-pink bg-pink-100 px-3 py-1 rounded-full">Keunggulan</span>
             <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                Keunggulan English Trick
+                Kurikulum Internasional Pearson
             </h2>
             <p class="text-slate-600 text-base sm:text-lg">
-                Program dan dukungan untuk membantu siswa berkembang.
+                Standar penilaian GSE & CEFR
             </p>
         </div>
 
@@ -521,7 +524,7 @@
                 <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-black">
                     📊
                 </div>
-                <h3 class="text-lg font-black text-slate-900">Tes Kenaikan Level CEFR</h3>
+                <h3 class="text-lg font-black text-slate-900">Tes Kenaikan Level</h3>
                 <p class="text-sm text-slate-600 leading-relaxed">
                     Evaluasi level belajar secara terstruktur.
                 </p>
@@ -554,9 +557,9 @@
                 <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl font-black">
                     🏆
                 </div>
-                <h3 class="text-lg font-black text-slate-900">Pendampingan Olimpiade/Lomba</h3>
+                <h3 class="text-lg font-black text-slate-900">Coaching Clinic</h3>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    Dukungan dan pendampingan untuk mengikuti olimpiade atau lomba.
+                    Pendampingan Lomba dan Olimpiade
                 </p>
             </div>
 
@@ -670,7 +673,7 @@
             @endforeach
         </div>
 
-        <!-- Bottom Banner: Ace the Test, Elevate Your English with Smart Tricks! -->
+        <!-- Bottom Banner: Ace the Test, Elevate Your English with Smart Tricks! 
         <div class="mt-14 bg-gradient-to-r from-cyan-600 via-et-cyan to-pink-500 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div class="space-y-1">
                 <span class="text-xs font-black uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full inline-block">English Trick Sidoarjo</span>
@@ -689,13 +692,13 @@
                     <span>Chat WhatsApp</span>
                 </a>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </section>
 
 
-<!-- 8. SECTION FORM PENDAFTARAN & KONSULTASI ONLINE -->
+<!-- 8. SECTION FORM PENDAFTARAN & KONSULTASI ONLINE 
 <section id="daftar" class="reveal-section py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -791,7 +794,7 @@
 
                         <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-et-cyan to-et-pink hover:opacity-95 text-white font-extrabold text-base shadow-xl shadow-cyan-500/20 active:scale-95 transition-all">
                             Kirim & Hubungkan ke WhatsApp Admin &rarr;
-                        </button>
+                        </button> 
 
                     </form>
                 </div>
@@ -800,7 +803,7 @@
         </div>
 
     </div>
-</section>
+</section> -->
 
 
 <!-- 9. SECTION LOKASI CABANG ENGLISH TRICK & GOOGLE MAPS (PDF Page 7) -->
@@ -885,15 +888,15 @@
                     📍
                 </div>
                 <div>
-                    <h4 class="text-xl font-black text-white">Ada Pertanyaan Tentang Lokasi?</h4>
+                    <h4 class="text-xl font-black text-white">Segera Hubungi Cabang Terdekat Kami Untuk Berkesempatan Mengikuti Trial Class</h4>
                     <p class="text-slate-300 text-xs sm:text-sm mt-0.5">
                         Kamu bisa hubungi cabang terdekat kami melalui WhatsApp atau klik tombol "Lihat Lokasi" untuk petunjuk arah di Google Maps.
                     </p>
                 </div>
             </div>
-            <a href="https://wa.me/6285385120633" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-et-cyan to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-extrabold text-sm shadow-md transition-all whitespace-nowrap shrink-0">
+            <!-- <a href="https://wa.me/6285385120633" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-et-cyan to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-extrabold text-sm shadow-md transition-all whitespace-nowrap shrink-0">
                 Hubungi Kami via WhatsApp &rarr;
-            </a>
+            </a> -->
         </div>
 
     </div>
@@ -917,23 +920,22 @@
             <!-- Position 1 -->
             <div class="bg-white p-7 rounded-3xl border-2 border-slate-100 shadow-md hover:shadow-xl hover:border-et-cyan transition-all space-y-4 flex flex-col justify-between reveal-child">
                 <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-et-cyan flex items-center justify-center text-2xl">
+                    <!-- <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-et-cyan flex items-center justify-center text-2xl">
                         👶
-                    </div>
+                    </div> -->
                     <div>
-                        <span class="text-[11px] font-black uppercase tracking-wider text-et-pink bg-pink-50 px-2.5 py-0.5 rounded-full">Full-Time / Part-Time</span>
-                        <h3 class="text-xl font-black text-slate-900 mt-2">English Tutor (Kids & Junior)</h3>
-                        <p class="text-xs text-slate-500 font-semibold mt-0.5">Penempatan: Karangbong, Damarsi, atau Taman Pondok Jati</p>
+                        <span class="text-[11px] font-black uppercase tracking-wider text-et-pink bg-pink-50 px-2.5 py-0.5 rounded-full">Full-Time</span>
+                        <h3 class="text-xl font-black text-slate-900 mt-2">English Teacher</h3>
+                        <p class="text-xs text-slate-500 font-semibold mt-0.5">Penempatan:<br>Kav. Karangbong Indah No. 8 Jalang Karangbong, Gedangan, Sidoarjo, 61254<br></p>
                     </div>
                     <ul class="text-xs text-slate-600 space-y-1.5 pt-2">
-                        <li class="flex items-center gap-2">✓ Menguasai Phonics & Fun Speaking games</li>
-                        <li class="flex items-center gap-2">✓ Ramah, sabar, dan menyukai dunia anak</li>
-                        <li class="flex items-center gap-2">✓ Terbuka untuk Fresh Graduate / Mahasiswa Akhir</li>
+                        <li class="flex items-center gap-2">✓ Bachelor's Degree (S1) in English Education, ENglish Literature, Education, or a related field. Fresh graduates are welcome to apply. Candidates with teaching experience are an advantage. Check for details.</li>
+                        
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100">
-                    <a href="https://api.whatsapp.com/send?phone=6285385120633&text={{ urlencode('Halo Admin English Trick Karangbong! Saya tertarik melamar posisi: English Tutor (Kids & Junior). Mohon info prosedur seleksi dan pengiriman CV.') }}" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-et-cyan hover:bg-et-cyan-dark text-white font-black text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-md">
-                        <span>Lamar Posisi Ini &rarr;</span>
+                    <a href="https://glints.com/id/opportunities/jobs/guru-bahasa-inggris/4ab7e43c-f592-40f6-a309-923b0abbd215?utm_medium=share&utm_campaign=marketplace&utm_source=whatsapp') }}" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-et-cyan hover:bg-et-cyan-dark text-white font-black text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-md">
+                        <span>Lamar Melalui Glints</span>
                     </a>
                 </div>
             </div>
@@ -941,23 +943,21 @@
             <!-- Position 2 -->
             <div class="bg-white p-7 rounded-3xl border-2 border-slate-100 shadow-md hover:shadow-xl hover:border-et-pink transition-all space-y-4 flex flex-col justify-between reveal-child reveal-delay-1">
                 <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-pink-100 text-et-pink flex items-center justify-center text-2xl">
+                    <!-- <div class="w-12 h-12 rounded-2xl bg-pink-100 text-et-pink flex items-center justify-center text-2xl">
                         🗣️
-                    </div>
+                    </div> -->
                     <div>
-                        <span class="text-[11px] font-black uppercase tracking-wider text-cyan-700 bg-cyan-50 px-2.5 py-0.5 rounded-full">Full-Time / Part-Time</span>
-                        <h3 class="text-xl font-black text-slate-900 mt-2">Speaking Coach & Exam Tutor</h3>
-                        <p class="text-xs text-slate-500 font-semibold mt-0.5">Penempatan: Offline Sidoarjo & Online Class</p>
+                        <span class="text-[11px] font-black uppercase tracking-wider text-cyan-700 bg-cyan-50 px-2.5 py-0.5 rounded-full">Full-Time</span>
+                        <h3 class="text-xl font-black text-slate-900 mt-2">Academic Coordinator</h3>
+                        <p class="text-xs text-slate-500 font-semibold mt-0.5">Penempatan: <br>Ruko Graha Juanda No.A13, Area Sawah, Damarsi, Kec. Buduran, Kabupaten Sidoarjo, Jawa Timur 61252 & Online Class<br></p>
                     </div>
                     <ul class="text-xs text-slate-600 space-y-1.5 pt-2">
-                        <li class="flex items-center gap-2">✓ Fasih Speaking & penguasaan trik grammar</li>
-                        <li class="flex items-center gap-2">✓ Pengalaman TOEFL / IELTS / Business English nilai plus</li>
-                        <li class="flex items-center gap-2">✓ Berjiwa komunikatif & energik</li>
+                        <li class="flex items-center gap-2">Lowongan Belum Tersedia.</li>
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100">
-                    <a href="https://api.whatsapp.com/send?phone=6285385120633&text={{ urlencode('Halo Admin English Trick Karangbong! Saya tertarik melamar posisi: Speaking Coach & Exam Tutor. Mohon info prosedur seleksi dan pengiriman CV.') }}" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-et-pink hover:bg-et-pink-hover text-white font-black text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-md">
-                        <span>Lamar Posisi Ini &rarr;</span>
+                    <a rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-et-pink hover:bg-et-pink-hover text-white font-black text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-md">
+                        <span>Lamar Posisi Ini</span>
                     </a>
                 </div>
             </div>
@@ -965,29 +965,27 @@
             <!-- Position 3 -->
             <div class="bg-white p-7 rounded-3xl border-2 border-slate-100 shadow-md hover:shadow-xl hover:border-emerald-500 transition-all space-y-4 flex flex-col justify-between reveal-child reveal-delay-2">
                 <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
+                    <!-- <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
                         📋
-                    </div>
+                    </div> -->
                     <div>
                         <span class="text-[11px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">Full-Time</span>
-                        <h3 class="text-xl font-black text-slate-900 mt-2">Admin & Academic Coordinator</h3>
-                        <p class="text-xs text-slate-500 font-semibold mt-0.5">Penempatan: Kantor Cabang Sidoarjo</p>
+                        <h3 class="text-xl font-black text-slate-900 mt-2">Branch Manager</h3>
+                        <p class="text-xs text-slate-500 font-semibold mt-0.5">Penempatan: <br>Ruko Graha Juanda No.A13, Area Sawah, Damarsi, Kec. Buduran, Kabupaten Sidoarjo, Jawa Timur 61252<br></p>
                     </div>
                     <ul class="text-xs text-slate-600 space-y-1.5 pt-2">
-                        <li class="flex items-center gap-2">✓ Mengelola jadwal kelas & administrasi siswa</li>
-                        <li class="flex items-center gap-2">✓ Komunikasi prima & ramah via WhatsApp</li>
-                        <li class="flex items-center gap-2">✓ Terbiasa mengoperasikan komputer & spreadsheet</li>
+                        <li class="flex items-center gap-2"><br>Lowongan Belum Tersedia.<br></li>
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100">
-                    <a href="https://api.whatsapp.com/send?phone=6285385120633&text={{ urlencode('Halo Admin English Trick Karangbong! Saya tertarik melamar posisi: Admin & Academic Coordinator. Mohon info prosedur seleksi dan pengiriman CV.') }}" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-md">
-                        <span>Lamar Posisi Ini &rarr;</span>
+                    <a rel="nooponer noreferrer" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-md">
+                        <span>Lamar Posisi Ini</span>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Banner Kirim CV Terbuka -->
+        <!-- Banner Kirim CV Terbuka 
         <div class="rounded-3xl bg-slate-900 text-white p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl reveal-child">
             <div class="space-y-2 text-center md:text-left">
                 <span class="text-xs font-black uppercase tracking-wider text-cyan-400 bg-cyan-950/80 px-3 py-1 rounded-full border border-cyan-800">Open Talent Pool</span>
@@ -997,7 +995,7 @@
             <a href="https://api.whatsapp.com/send?phone=6285385120633&text={{ urlencode('Halo HRD & Admin English Trick Karangbong! Saya ingin mengirimkan CV terbuka (Open Application) untuk bergabung di English Trick. Mohon info alamat email atau kontak pengiriman berkas.') }}" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-2xl bg-white text-slate-900 hover:bg-yellow-300 font-black text-sm shadow-lg hover:scale-105 transition-all whitespace-nowrap">
                 Kirim CV Terbuka via WhatsApp &rarr;
             </a>
-        </div>
+        </div> -->
 
     </div>
 </section>
